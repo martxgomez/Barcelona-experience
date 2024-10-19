@@ -9,6 +9,12 @@ El metro en Barcelona esconde muchos peligros.
 ## Planificación
 
 1. Funcionalidad del juego
+Tendrás que esquivar a los guiris/turistas sino quieres que te paren para preguntar dónde comer paela.
+Al mismo tiempo puedes conseguir puntos matando las cucarachas del metro. ¡OJO! Estos puntos te ayudarán a pelear contra el final boss:
+El carterista o pickpocket del metro. 
+
+¡Si consigues evitar al carterista llegarás sano/a al trabajo!
+
 2. Diseño del juego (low-fi)
 3. Lista de tareas
 4. Organización de OOP:
