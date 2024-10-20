@@ -1,8 +1,8 @@
 # Barcelona Experience
 ## Descripción
-¿Quieres sentir el día a día viviendo en Barcelona? ¡Ahora lo puedes esxperimentar!
+¿Quieres sentir el día a día viviendo en Barcelona? ¡Ahora lo puedes experimentar!
 
-Eres un oficinista que tienes que llegar al trabajo en metro pero ¡CUIDADO! 
+Eres un oficinista que tiene que llegar al trabajo en metro pero ¡CUIDADO! 
 El metro en Barcelona esconde muchos peligros.
 ¿Serás capaz de sortear los peligros y llegar a tu trabajo a tiempo?
 
