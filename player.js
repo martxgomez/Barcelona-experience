@@ -20,6 +20,7 @@ class Player {
   }
 
   //Definimos el movimiento del jugador
+  //No se si eliminar la direccion izquierda para evitar problemas a futuro
   move(direction) {
     switch (direction) {
       case "left":

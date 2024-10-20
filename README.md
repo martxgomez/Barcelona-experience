@@ -71,9 +71,9 @@ Segundo escenario: Interior del metro (batalla con el carterista)
 
 - [ ] **Desarrollo del Juego**
   - [ ] **Escenario 1: Andén del metro**
-    - [ ] Implementar el movimiento del jugador.
+    - [X] Implementar el movimiento del jugador.
     - [ ] Lógica para esquivar turistas.
-    - [ ] Lógica para pisar cucarachas y ganar puntos.
+    - [X] Lógica para pisar cucarachas y ganar puntos.
     - [ ] Crear la pantalla de derrota.
     - [ ] Transición a la pantalla del interior del metro.
   
@@ -84,7 +84,7 @@ Segundo escenario: Interior del metro (batalla con el carterista)
     - [ ] Pantalla de victoria.
 
 - [ ] **Estilo y Diseño (CSS)**
-  - [ ] Crear un archivo CSS para el estilo del juego.
+  - [X] Crear un archivo CSS para el estilo del juego.
   - [ ] Establecer el diseño de los elementos.
   - [ ] Establecer el diseño del andén del metro.
   - [ ] Establecer el diseño del interior del metro.
