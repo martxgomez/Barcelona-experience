@@ -54,3 +54,12 @@
     position: absolute;
     left: 0;
   }
+
+  .tourist{
+    background-color:red;
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    left:0;
+   
+  }

@@ -8,9 +8,9 @@ class Player {
     this.scoreElement.setAttribute("id", "score");
     this.score=0;
     myGame.element.appendChild(this.scoreElement);
-    this.lifeElement = document.createElement("div");
-    this.lifeElement.setAttribute("id", "life");
-    myGame.element.appendChild(this.lifeElement);
+    this.livesElement = document.createElement("div");
+    this.livesElement.setAttribute("id", "life");
+    myGame.element.appendChild(this.livesElement);
 
     this.positionBottom = (myGame.height/2);
     this.positionLeft = 0;
@@ -85,6 +85,36 @@ class Player {
       }
     });
   }
+
+  receiveDamage(){
+    //marcamos los limites del player
+    const playerLeft = this.positionLeft;
+    const playerRight = this.positionLeft + this.width;
+    const playerBottom = this.positionBottom;
+    const playerTop = this.positionBottom + this.height;
+
+    //Verificamos cada cucaracha y su posición
+    Tourist.touristhArray.forEach((tourist) => {
+      //marcamos los limites de la cucaracha
+      const touristLeft = tourist.positionLeft;
+      const touristRight = tourist.positionLeft + tourist.width;
+      const touristBottom = tourist.positionBottom;
+      const touristTop = tourist.positionBottom+ tourist.height;
+
+      if (
+        playerRight> touristLeft  &&
+        playerLeft < touristRight &&
+        playerTop > touristBottom &&
+        playerBottom < touristTop
+      ) {
+        this.lives--;
+        this.livesElement.innerText = this.lives;
+        
+      }
+    });
+  }
 }
+
+
 
 const player = new Player();

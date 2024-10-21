@@ -9,7 +9,7 @@ class Cockroach {
     this.height = this.element.getBoundingClientRect().height;
     this.width = this.element.getBoundingClientRect().width;
 
-    this.positionLeft = myGame.width
+    this.positionLeft = myGame.width;
     this.positionBottom = Math.floor(Math.random() * (myGame.height - 50));
 
     this.element.style.left = this.positionLeft + "px";
@@ -28,7 +28,7 @@ class Cockroach {
       // eliminar del HTML
       this.element.remove();
       // eliminar del array
-      // localizar la bullet en concreto (la que acaba de chocar)
+      // localizar la cucaracha en concreto (la que acaba de pisar)
       const index = Cockroach.cockroachArray.indexOf(this);
       Cockroach.cockroachArray.splice(index, 1);
     }
@@ -40,5 +40,3 @@ class Cockroach {
     this.element.remove();
   }
 }
-
-//Generamos 5 cucarachas
