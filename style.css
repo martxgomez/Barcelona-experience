@@ -16,6 +16,7 @@
     height: 85vh;
     background-color: black;
     position: relative;
+    overflow-x: hidden;
   }
   
   #player {

@@ -14,7 +14,7 @@ class Cockroach {
 
     this.element.style.left = this.positionLeft + "px";
     this.element.style.bottom = this.positionBottom + "px";
-    this.velocity = 10;
+    this.velocity = 1.5;
 
     Cockroach.cockroachArray.push(this);
   }
@@ -24,7 +24,7 @@ class Cockroach {
     this.positionLeft -= this.velocity;
     this.element.style.left = this.positionLeft + "px";
 
-    if (this.positionLeft >= myGame.width - this.width) {
+    if (this.positionLeft <= 0) {
       // eliminar del HTML
       this.element.remove();
       // eliminar del array
@@ -36,12 +36,9 @@ class Cockroach {
   //Definimos el método para eliminar la cucaracha de la pantalla
   destroy() {
     const cockroachIndex = Cockroach.cockroachArray.indexOf(this);
-    Cockroach.cockroachArray.splice(bulletIndex, 1);
+    Cockroach.cockroachArray.splice(cockroachIndex, 1);
     this.element.remove();
   }
 }
 
 //Generamos 5 cucarachas
-for (let index = 0; index < 5; index++) {
-    new Cockroach();
-  }

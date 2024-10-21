@@ -6,6 +6,7 @@ class Player {
     myGame.element.appendChild(this.element);
     this.scoreElement = document.createElement("div");
     this.scoreElement.setAttribute("id", "score");
+    this.score=0;
     myGame.element.appendChild(this.scoreElement);
     this.lifeElement = document.createElement("div");
     this.lifeElement.setAttribute("id", "life");
@@ -13,7 +14,7 @@ class Player {
 
     this.positionBottom = (myGame.height/2);
     this.positionLeft = 0;
-    this.velocity = 30;
+    this.velocity = 10;
     this.direction = null;
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
@@ -79,7 +80,7 @@ class Player {
         playerBottom < cockroachTop
       ) {
         this.score+=50;
-        this.scoreElement.innerText= this.score +"p.";
+        this.scoreElement.innerText = this.score;
         cockroach.destroy();
       }
     });
