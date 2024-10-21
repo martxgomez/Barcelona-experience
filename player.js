@@ -11,6 +11,7 @@ class Player {
     this.livesElement = document.createElement("div");
     this.livesElement.setAttribute("id", "life");
     myGame.element.appendChild(this.livesElement);
+    this.lives=5;
 
     this.positionBottom = (myGame.height/2);
     this.positionLeft = 0;
@@ -94,7 +95,7 @@ class Player {
     const playerTop = this.positionBottom + this.height;
 
     //Verificamos cada cucaracha y su posición
-    Tourist.touristhArray.forEach((tourist) => {
+    Tourist.touristsArray.forEach((tourist) => {
       //marcamos los limites de la cucaracha
       const touristLeft = tourist.positionLeft;
       const touristRight = tourist.positionLeft + tourist.width;
@@ -109,6 +110,11 @@ class Player {
       ) {
         this.lives--;
         this.livesElement.innerText = this.lives;
+        console.log(this.lives);
+//si pierde todas las vidas pierde
+        if(this.lives<=0){
+
+        }
         
       }
     });

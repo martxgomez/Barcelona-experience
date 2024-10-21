@@ -3,13 +3,12 @@ class Tourist {
 
   static touristsArray = [];
   constructor() {
-    this.height = this.element.getBoundingClientRect().height;
-    this.width = this.element.getBoundingClientRect().width;
-    this.type = tourist;
-
+    //Definimos en pantalla y su posición aleatoria
     this.element = document.createElement("div");
     this.element.classList.add("tourist");
     myGame.element.appendChild(this.element);
+    this.height = this.element.getBoundingClientRect().height;
+    this.width = this.element.getBoundingClientRect().width;
 
     this.positionLeft = myGame.width;
     this.positionBottom = Math.floor(Math.random() * (myGame.height - 50));
@@ -17,7 +16,8 @@ class Tourist {
     this.element.style.left = this.positionLeft + "px";
     this.element.style.bottom = this.positionBottom + "px";
     this.velocity = 2;
-    Tourist.touristArray.push(this);
+
+    Tourist.touristsArray.push(this);
   }
 
   //definimos el método para que los turistas se muevan de derecha a izquierda
@@ -30,9 +30,11 @@ class Tourist {
       this.element.remove();
       // eliminar del array
       // localizar los turistas en concreto
-      const index = Tourist.touristArray.indexOf(this);
-      Tourist.touristArray.splice(index, 1);
+      const index = Tourist.touristsArray.indexOf(this);
+      Tourist.touristsArray.splice(index, 1);
     }
+  
   }
 }
+
 

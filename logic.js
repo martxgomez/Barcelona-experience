@@ -11,6 +11,7 @@ document.addEventListener("keydown", (event) => {
       break;
   }
   player.attack();
+  player.receiveDamage();
 });
 
 document.addEventListener("keyup", (event) => {
