@@ -23,12 +23,12 @@ class Player {
   //No se si eliminar la direccion izquierda para evitar problemas a futuro
   move(direction) {
     switch (direction) {
-      case "left":
-        this.positionLeft -= this.velocity;
-        if (this.positionLeft < 0) {
-          this.positionLeft = 0;
-        }
-        break;
+    //   case "left":
+    //     this.positionLeft -= this.velocity;
+    //     if (this.positionLeft < 0) {
+    //       this.positionLeft = 0;
+    //     }
+    //     break;
       case "right":
         this.positionLeft += this.velocity;
         if (this.positionLeft > myGame.width - this.width) {
