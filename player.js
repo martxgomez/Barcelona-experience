@@ -14,7 +14,7 @@ class Player {
 
     this.positionBottom = (myGame.height/2);
     this.positionLeft = 0;
-    this.velocity = 10;
+    this.velocity = 5;
     this.direction = null;
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
@@ -39,7 +39,7 @@ class Player {
       case "bottom":
         this.positionBottom -= this.velocity;
         if (this.positionBottom < 0) {
-          this.positionBottom = myGame.height/2;
+          this.positionBottom = 0;
         }
         break;
       case "top":
