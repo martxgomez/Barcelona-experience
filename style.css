@@ -62,3 +62,15 @@ body {
   position: absolute;
   left: 0;
 }
+
+
+#game-over-1{
+  width: 90vw;
+  height:85vh;
+  background-image: url(./images/Pantalla\ perder-1.png);
+  position: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+background-position: center;
+  z-index: 1000;
+}
