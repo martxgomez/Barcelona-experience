@@ -6,14 +6,14 @@ class Player {
     myGame.element.appendChild(this.element);
     this.scoreElement = document.createElement("div");
     this.scoreElement.setAttribute("id", "score");
-    this.score=0;
+    this.score = 0;
     myGame.element.appendChild(this.scoreElement);
     this.livesElement = document.createElement("div");
     this.livesElement.setAttribute("id", "life");
     myGame.element.appendChild(this.livesElement);
-    this.lives=5;
+    this.lives = 5;
 
-    this.positionBottom = (myGame.height/2);
+    this.positionBottom = myGame.height / 2;
     this.positionLeft = 0;
     this.velocity = 5;
     this.direction = null;
@@ -25,12 +25,12 @@ class Player {
   //No se si eliminar la direccion izquierda para evitar problemas a futuro
   move(direction) {
     switch (direction) {
-    //   case "left":
-    //     this.positionLeft -= this.velocity;
-    //     if (this.positionLeft < 0) {
-    //       this.positionLeft = 0;
-    //     }
-    //     break;
+      //   case "left":
+      //     this.positionLeft -= this.velocity;
+      //     if (this.positionLeft < 0) {
+      //       this.positionLeft = 0;
+      //     }
+      //     break;
       case "right":
         this.positionLeft += this.velocity;
         if (this.positionLeft > myGame.width - this.width) {
@@ -72,22 +72,22 @@ class Player {
       const cockroachLeft = cockroach.positionLeft;
       const cockroachRight = cockroach.positionLeft + cockroach.width;
       const cockroachBottom = cockroach.positionBottom;
-      const cockroachTop = cockroach.positionBottom+ cockroach.height;
+      const cockroachTop = cockroach.positionBottom + cockroach.height;
 
       if (
-        playerRight> cockroachLeft  &&
+        playerRight > cockroachLeft &&
         playerLeft < cockroachRight &&
         playerTop > cockroachBottom &&
         playerBottom < cockroachTop
       ) {
-        this.score+=50;
+        this.score += 50;
         this.scoreElement.innerText = this.score;
         cockroach.destroy();
       }
     });
   }
 
-  receiveDamage(){
+  receiveDamage() {
     //marcamos los limites del player
     const playerLeft = this.positionLeft;
     const playerRight = this.positionLeft + this.width;
@@ -100,10 +100,10 @@ class Player {
       const touristLeft = tourist.positionLeft;
       const touristRight = tourist.positionLeft + tourist.width;
       const touristBottom = tourist.positionBottom;
-      const touristTop = tourist.positionBottom+ tourist.height;
+      const touristTop = tourist.positionBottom + tourist.height;
 
       if (
-        playerRight> touristLeft  &&
+        playerRight > touristLeft &&
         playerLeft < touristRight &&
         playerTop > touristBottom &&
         playerBottom < touristTop
@@ -111,16 +111,13 @@ class Player {
         this.lives--;
         this.livesElement.innerText = this.lives;
         console.log(this.lives);
-//si pierde todas las vidas pierde
-        if(this.lives<=0){
-
+        //si pierde todas las vidas pierde
+        if (this.lives <= 0) {
+          myGame.gameOver=true;
         }
-        
       }
     });
   }
 }
-
-
 
 const player = new Player();

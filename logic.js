@@ -11,7 +11,6 @@ document.addEventListener("keydown", (event) => {
       break;
   }
   player.attack();
-  player.receiveDamage();
 });
 
 document.addEventListener("keyup", (event) => {
@@ -30,28 +29,31 @@ let frames = 0;
 // Creamos un loop infinito
 // le decimos a nuestra app que queremos reproducir código en cada frame
 function gameLoop() {
-  requestAnimationFrame(gameLoop);
-  frames++;
+  if (!myGame.gameOver) {
+    requestAnimationFrame(gameLoop);
+    frames++;
+    player.receiveDamage();
 
-  Cockroach.cockroachArray.forEach((cockroach) => {
-    cockroach.move();
-  });
+    Cockroach.cockroachArray.forEach((cockroach) => {
+      cockroach.move();
+    });
 
-  Tourist.touristsArray.forEach((tourist) => {
-    tourist.move();
-  });
-  player.attack();
+    Tourist.touristsArray.forEach((tourist) => {
+      tourist.move();
+    });
+    player.attack();
 
-  if (frames % 100 === 0) {
-    new Cockroach();
+    if (frames % 100 === 0) {
+      new Cockroach();
+    }
+
+    if (frames % 80 === 0) {
+      new Tourist();
+    }
+
+    //   enemyArea.move();
+    player.move(player.direction);
   }
-
-  if (frames % 80 === 0) {
-    new Tourist();
-  }
-
-  //   enemyArea.move();
-  player.move(player.direction);
 }
 
 requestAnimationFrame(gameLoop);

@@ -11,7 +11,8 @@ class Tourist {
     this.width = this.element.getBoundingClientRect().width;
 
     this.positionLeft = myGame.width;
-    this.positionBottom = Math.floor(Math.random() * (myGame.height - 50));
+    this.positionBottom = Math.floor(Math.random() * (myGame.height));
+
 
     this.element.style.left = this.positionLeft + "px";
     this.element.style.bottom = this.positionBottom + "px";
@@ -33,8 +34,5 @@ class Tourist {
       const index = Tourist.touristsArray.indexOf(this);
       Tourist.touristsArray.splice(index, 1);
     }
-  
   }
 }
-
-
