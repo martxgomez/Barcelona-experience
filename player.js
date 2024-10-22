@@ -106,11 +106,13 @@ class Player {
         playerRight > touristLeft &&
         playerLeft < touristRight &&
         playerTop > touristBottom &&
-        playerBottom < touristTop
+        playerBottom < touristTop &&
+        !tourist.hasDamagedPlayer
       ) {
         this.lives--;
         this.livesElement.innerText = this.lives;
         console.log(this.lives);
+        tourist.hasDamagedPlayer = true;
         //si pierde todas las vidas pierde
         if (this.lives <= 0) {
           myGame.gameOver=true;

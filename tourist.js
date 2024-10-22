@@ -18,6 +18,8 @@ class Tourist {
     this.element.style.bottom = this.positionBottom + "px";
     this.velocity = 2;
 
+    //añadimos propiedad para saber si ya ha causado daño
+    this.hasDamagedPlayer = false;
     Tourist.touristsArray.push(this);
   }
 
