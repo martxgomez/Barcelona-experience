@@ -1,5 +1,8 @@
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
+    case "ArrowLeft":
+      player.direction = "left";
+      break;
     case "ArrowRight":
       player.direction = "right";
       break;
