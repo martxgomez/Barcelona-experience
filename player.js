@@ -2,7 +2,7 @@ class Player {
   constructor() {
     //Creamos el jugador y sus atributos,score y life en pantalla
     this.element = document.createElement("div");
-    this.element.setAttribute("id", "player");
+    this.element.setAttribute("id", "player-secondscreen-1");
     myGame.element.appendChild(this.element);
     this.scoreElement = document.createElement("div");
     this.scoreElement.setAttribute("id", "score");
@@ -13,12 +13,13 @@ class Player {
     myGame.element.appendChild(this.livesElement);
     this.lives = 3;
 
-    this.positionBottom = myGame.height / 2;
-    this.positionLeft = 0;
-    this.velocity = 5;
-    this.direction = null;
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
+    this.positionBottom = (myGame.height-this.height)/2;
+    // this.positionLeft = 0;
+    this.velocity = 5;
+    this.direction = null;
+    
   }
 
   //Definimos el movimiento del jugador
