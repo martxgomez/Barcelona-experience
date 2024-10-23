@@ -56,30 +56,38 @@ body {
 }
 
 .tourist {
-  background-color: red;
+  background-color: rgb(67, 87, 159);
   width: 80px;
   height: 120px;
   position: absolute;
   left: 0;
 }
 
-
-#game-over-1{
+#game-over-1 {
   width: 90vw;
-  height:85vh;
+  height: 85vh;
   background-image: url(./images/Pantalla\ perder-1.png);
   position: fixed;
   background-size: contain;
   background-repeat: no-repeat;
-background-position: center;
+  background-position: center;
   z-index: 1000;
 }
 
-#screen-2{
+#screen-2 {
   width: 90vw;
-  height:85vh;
+  height: 85vh;
   background-color: black;
   position: relative;
   overflow-x: hidden;
-  z-index:1000;
+  z-index: 1000;
+}
+
+#pickpocket {
+  background-color: red;
+  width: 80px;
+  height: 120px;
+  position: absolute;
+  left: 0;
+  z-index: 1000;
 }

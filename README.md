@@ -75,7 +75,7 @@ Segundo escenario: Interior del metro (batalla con el carterista)
     - [X] Lógica para esquivar turistas.
     - [x] Lógica para pisar cucarachas y ganar puntos.
     - [X] Crear la pantalla de derrota.
-    - [ ] Transición a la pantalla del interior del metro.
+    - [X] Transición a la pantalla del interior del metro.
 
   - [ ] **Escenario 2: Interior del metro**
     - [ ] Lógica para el enfrentamiento con el carterista.

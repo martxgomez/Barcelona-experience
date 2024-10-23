@@ -61,6 +61,8 @@ function gameLoop() {
       myGame.gameOver = true;
       screenPass = true;
       myGame.createNewScreen("screen-2");
+      new Player();
+      new Pickpocket();
     }
   }
 }
