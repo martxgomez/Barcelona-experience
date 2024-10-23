@@ -25,12 +25,12 @@ class Player {
   //No se si eliminar la direccion izquierda para evitar problemas a futuro
   move(direction) {
     switch (direction) {
-        case "left":
-          this.positionLeft -= this.velocity;
-          if (this.positionLeft < 0) {
-            this.positionLeft = 0;
-          }
-          break;
+      case "left":
+        this.positionLeft -= this.velocity;
+        if (this.positionLeft < 0) {
+          this.positionLeft = 0;
+        }
+        break;
       case "right":
         this.positionLeft += this.velocity;
         if (this.positionLeft > myGame.width - this.width) {
@@ -115,11 +115,10 @@ class Player {
         tourist.hasDamagedPlayer = true;
         //si pierde todas las vidas pierde
         if (this.lives <= 0) {
-          myGame.gameOver=true;
+          myGame.gameOver = true;
           this.gameOverElement = document.createElement("div");
           this.gameOverElement.setAttribute("id", "game-over-1");
           myGame.element.appendChild(this.gameOverElement);
-          
         }
       }
     });

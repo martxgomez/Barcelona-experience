@@ -16,7 +16,7 @@ class Tourist {
 
     this.element.style.left = this.positionLeft + "px";
     this.element.style.bottom = this.positionBottom + "px";
-    this.velocity = 2;
+    this.velocity = 1.8;
 
     //añadimos propiedad para saber si ya ha causado daño
     this.hasDamagedPlayer = false;

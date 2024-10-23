@@ -14,7 +14,7 @@ class Cockroach {
 
     this.element.style.left = this.positionLeft + "px";
     this.element.style.bottom = this.positionBottom + "px";
-    this.velocity = 1.5;
+    this.velocity = 2.1;
 
     Cockroach.cockroachArray.push(this);
   }

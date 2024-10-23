@@ -74,3 +74,12 @@ body {
 background-position: center;
   z-index: 1000;
 }
+
+#screen-2{
+  width: 90vw;
+  height:85vh;
+  background-color: black;
+  position: relative;
+  overflow-x: hidden;
+  z-index:1000;
+}

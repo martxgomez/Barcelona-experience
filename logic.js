@@ -56,7 +56,18 @@ function gameLoop() {
 
     //   enemyArea.move();
     player.move(player.direction);
+    let screenPass = false;
+
+    if (player.positionLeft + player.width >= myGame.width) {
+      myGame.gameOver = true;
+      screenPass=true;
+      return screenPass;
+    }
   }
+}
+
+if (screenPass) {
+ myGame.createNewScreen("screen-2")
 }
 
 requestAnimationFrame(gameLoop);
