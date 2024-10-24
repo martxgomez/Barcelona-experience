@@ -2,7 +2,7 @@ class Player {
   constructor() {
     //Creamos el jugador y sus atributos,score y life en pantalla
     this.element = document.createElement("div");
-    this.element.setAttribute("id", "player-secondscreen-1");
+    this.element.setAttribute("id", "player");
     myGame.element.appendChild(this.element);
     this.scoreElement = document.createElement("div");
     this.scoreElement.setAttribute("id", "score");

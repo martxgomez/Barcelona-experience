@@ -23,30 +23,7 @@ body {
   width: 50px;
   height: 100px;
   position: absolute;
-  
   left: 0;
-  background-color: olive;
-}
-
-#player-secondscreen-1 {
-  width: 50px;
-  height: 100px;
-  position: absolute;
-  left: 20px;
-  background-color: olive;
-}
-#player-secondscreen-2 {
-  width: 50px;
-  height: 100px;
-  position: absolute;
-  left: 40px;
-  background-color: olive;
-}
-#player-secondscreen-3 {
-  width: 50px;
-  height: 100px;
-  position: absolute;
-  left: 60px;
   background-color: olive;
 }
 
@@ -96,14 +73,14 @@ body {
   z-index: 1000;
 }
 
-#screen-2 {
+/* #screen-2 {
   width: 90vw;
   height: 85vh;
   background-color: black;
   position: relative;
   overflow-x: hidden;
   z-index: 1000;
-}
+} */
 
 #pickpocket {
   background-color: red;

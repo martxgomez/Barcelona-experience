@@ -57,9 +57,8 @@ function gameLoop() {
       }
 
       player.move(player.direction);
-    } else if(myGame.currentScreen===2){
+    } else if (myGame.currentScreen === 2) {
       player.move(player.direction);
-
     }
 
     if (
