@@ -16,7 +16,7 @@ class Player {
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
     this.positionBottom = (myGame.height-this.height)/2;
-    // this.positionLeft = 0;
+    this.positionLeft = 0;
     this.velocity = 5;
     this.direction = null;
     

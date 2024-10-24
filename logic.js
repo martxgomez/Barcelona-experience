@@ -35,34 +35,38 @@ function gameLoop() {
   if (!myGame.gameOver) {
     requestAnimationFrame(gameLoop);
     frames++;
-    player.receiveDamage();
 
-    Cockroach.cockroachArray.forEach((cockroach) => {
-      cockroach.move();
-    });
+    if (myGame.currentScreen === 1) {
+      player.receiveDamage();
 
-    Tourist.touristsArray.forEach((tourist) => {
-      tourist.move();
-    });
-    player.attack();
+      Cockroach.cockroachArray.forEach((cockroach) => {
+        cockroach.move();
+      });
 
-    if (frames % 100 === 0) {
-      new Cockroach();
+      Tourist.touristsArray.forEach((tourist) => {
+        tourist.move();
+      });
+      player.attack();
+
+      if (frames % 100 === 0) {
+        new Cockroach();
+      }
+
+      if (frames % 80 === 0) {
+        new Tourist();
+      }
+
+      player.move(player.direction);
+    } else if(myGame.currentScreen===2){
+      player.move(player.direction);
+
     }
 
-    if (frames % 80 === 0) {
-      new Tourist();
-    }
-
-    //   enemyArea.move();
-    player.move(player.direction);
-
-    if (player.positionLeft + player.width >= myGame.width) {
-      myGame.gameOver = true;
-      screenPass = true;
-      myGame.createNewScreen("screen-2");
-      new Player();
-      new Pickpocket();
+    if (
+      myGame.currentScreen === 1 &&
+      player.positionLeft + player.width >= myGame.width
+    ) {
+      myGame.changeScreen(2);
     }
   }
 }
