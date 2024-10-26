@@ -14,9 +14,11 @@ class Pickpocket {
   move() {
     this.positionLeft += this.velocity;
     this.element.style.left = this.positionLeft + "px";
+    this.element.style.bottom = this.positionBottom + "px";
     if (this.positionLeft > myGame.width) {
       // eliminar del HTML
       this.element.remove();
     }
   }
+
 }
