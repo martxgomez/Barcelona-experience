@@ -20,17 +20,27 @@ class Game {
     this.currentScreen = screen;
     this.clearScreen();
 
-    if (screen === 2) {
+    this.obstacleTop;
+    this.obstacleBottom;
+    this.obstacleCenter
 
-      //Definimos los obstaculos como divs
-      const obstacleTop = new Obstacle("obstacle-top");
-      this.element.appendChild(obstacleTop.element);
-      const obstacleBottom = new Obstacle("obstacle-bottom");
-      this.element.appendChild(obstacleBottom.element);
-      //puede que añada uno central
-      // const obstacleCenter = new Obstacle("obstacle-center");
-      // this.element.appendChild(obstacleCenter.element);
- 
+    if (screen === 2) {
+      this.obstacleTop = new Obstacle("obstacle-top");
+      this.element.appendChild(this.obstacleTop.element);
+      this.obstacleTop.height = this.obstacleTop.element.getBoundingClientRect().height;
+      this.obstacleTop.width = this.obstacleTop.element.getBoundingClientRect().width;
+    
+
+      this.obstacleBottom = new Obstacle("obstacle-bottom");
+      this.element.appendChild(this.obstacleBottom.element);
+      this.obstacleBottom.height = this.obstacleBottom.element.getBoundingClientRect().height;
+      this.obstacleBottom.width = this.obstacleBottom.element.getBoundingClientRect().width;
+
+      // this.obstacleCenter = new Obstacle("obstacle-center");
+      // this.element.appendChild(this.obstacleCenter.element);
+      // this.obstacleBottom.height = this.obstacleBottom.getBoundingClientRect().height;
+      // this.obstacleBottom.width = this.obstacleBottom.getBoundingClientRect().width;
+
 
       if (player.score >= 300) {
         player.positionLeft = 300;
@@ -58,6 +68,13 @@ class Game {
       }, 500);
     }
   }
-}
 
+  changeScreenFinal(screen) {
+    this.currentScreen = screen;
+    this.clearScreen();
+    console.log("Final");
+    
+
+}
+}
 const myGame = new Game();

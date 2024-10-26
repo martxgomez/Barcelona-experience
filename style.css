@@ -19,7 +19,6 @@ body {
   overflow-x: hidden;
 }
 
-
 #player {
   width: 50px;
   height: 100px;
@@ -105,3 +104,4 @@ body {
   left: 0;
   bottom: 0;
 }
+
