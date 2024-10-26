@@ -67,6 +67,7 @@ class Game {
   changeScreenFinal(screen) {
     this.currentScreen = screen;
     this.clearScreen();
-}
 
+}
+}
 const myGame = new Game();

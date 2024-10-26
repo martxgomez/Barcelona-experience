@@ -18,13 +18,6 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-#game-area {
-  width: 90vw;
-  height: 85vh;
-  background-color: black;
-  position: relative;
-  overflow-x: hidden;
-}
 
 #player {
   width: 50px;
