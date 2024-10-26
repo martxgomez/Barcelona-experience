@@ -5,15 +5,15 @@ class Player {
     this.element.setAttribute("id", "player");
     myGame.element.appendChild(this.element);
 
-    // this.scoreElement = document.createElement("div");
-    // this.scoreElement.setAttribute("id", "score");
-    // this.score = 0;
-    // myGame.element.appendChild(this.scoreElement);
+    this.scoreElement = document.createElement("div");
+    this.scoreElement.setAttribute("id", "score");
+    this.score = 0;
+    myGame.element.appendChild(this.scoreElement);
 
-    // this.livesElement = document.createElement("div");
-    // this.livesElement.setAttribute("id", "life");
-    // this.lives = 3;
-    // myGame.element.appendChild(this.livesElement);
+    this.livesElement = document.createElement("div");
+    this.livesElement.setAttribute("id", "life");
+    this.lives = 3;
+    myGame.element.appendChild(this.livesElement);
 
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
@@ -59,7 +59,7 @@ class Player {
     this.element.style.left = this.positionLeft + "px";
     this.element.style.bottom = this.positionBottom + "px";
   }
-  
+
   //Definimos el método atacar a una cucaracha(para ganar puntuación)
   attack() {
     //marcamos los limites del player
@@ -184,6 +184,5 @@ class Player {
     this.element.style.bottom = this.positionBottom + "px";
   }
 }
-
 
 const player = new Player();

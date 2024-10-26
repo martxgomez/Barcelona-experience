@@ -1,15 +1,13 @@
 class Game {
   constructor() {
-      this.gameOver = false;
+    this.score = 0;
+    this.lives = 5;
+    this.gameOver = false;
     this.currentScreen = 1;
 
     this.element = document.querySelector("#game-area");
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
-
-    this.score = document.querySelector("#value");
-    this.lives = document.querySelector("#lives");
-
   }
 
   clearScreen() {
@@ -52,15 +50,12 @@ class Game {
         player.positionLeft = 100;
         player.positionBottom = (this.height - player.height) / 2;
       }
-      
       player.velocity = 3;
-      
       player.element.style.left = player.positionLeft + "px";
       player.element.style.bottom = player.positionBottom + "px";
       myGame.element.appendChild(player.element);
       myGame.element.appendChild(player.scoreElement);
       myGame.element.appendChild(player.livesElement);
-      
 
       setTimeout(() => {
         // código asíncrono
@@ -72,9 +67,6 @@ class Game {
   changeScreenFinal(screen) {
     this.currentScreen = screen;
     this.clearScreen();
-    console.log("Final");
-    
+}}
 
-}
-}
 const myGame = new Game();
