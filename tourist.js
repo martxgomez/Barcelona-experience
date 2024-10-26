@@ -11,8 +11,7 @@ class Tourist {
     this.width = this.element.getBoundingClientRect().width;
 
     this.positionLeft = myGame.width;
-    this.positionBottom = Math.floor(Math.random() * (myGame.height));
-
+    this.positionBottom = Math.floor(Math.random() * myGame.height);
 
     this.element.style.left = this.positionLeft + "px";
     this.element.style.bottom = this.positionBottom + "px";

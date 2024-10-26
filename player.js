@@ -4,22 +4,23 @@ class Player {
     this.element = document.createElement("div");
     this.element.setAttribute("id", "player");
     myGame.element.appendChild(this.element);
+
     this.scoreElement = document.createElement("div");
     this.scoreElement.setAttribute("id", "score");
     this.score = 0;
     myGame.element.appendChild(this.scoreElement);
+
     this.livesElement = document.createElement("div");
     this.livesElement.setAttribute("id", "life");
-    myGame.element.appendChild(this.livesElement);
     this.lives = 3;
+    myGame.element.appendChild(this.livesElement);
 
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
-    this.positionBottom = (myGame.height-this.height)/2;
+    this.positionBottom = (myGame.height - this.height) / 2;
     this.positionLeft = 0;
     this.velocity = 5;
     this.direction = null;
-    
   }
 
   //Definimos el movimiento del jugador
@@ -124,6 +125,20 @@ class Player {
       }
     });
   }
+  //definimos el metodo para que el player no pueda pasar por encima de los obstaculos
+  // block(){
+  //   const obstacleLeft = obstacle.positionLeft;
+  //       const obstacleRight = obstacle.positionLeft + obstacle.width;
+  //       const obstacleBottom = obstacle.positionBottom;
+  //       const obstacleTop = obstacle.positionBottom + obstacle.height;
+
+  //       if (
+  //         playerRight > obstacleLeft &&
+  //         playerLeft < obstacleRight &&
+  //         playerTop > obstacleBottom&&
+  //         playerBottom < obstacleTop)
+  //   {}
+  // }
 }
 
 const player = new Player();

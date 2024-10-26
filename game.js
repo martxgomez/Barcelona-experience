@@ -11,52 +11,40 @@ class Game {
   }
 
   clearScreen() {
-    this.element.innerHTML="";
+    this.element.innerHTML = "";
   }
-  // createNewScreen(id) {
-
-  //   const screenElement = document.createElement("div");
-  //   screenElement.setAttribute("id", id);
-  //   myGame.element.appendChild(screenElement);
-  // }
 
   changeScreen(screen, Pickpocket) {
     this.currentScreen = screen;
     this.clearScreen();
 
     if (screen === 2) {
-      // myGame.createNewScreen("game-area");
+      const obstacleTop = new Obstacle("obstacle-top");
+      this.element.appendChild(obstacleTop.element);
+      const obstacleBottom = new Obstacle("obstacle-bottom");
+      this.element.appendChild(obstacleBottom.element);
+      // const obstacleCenter = new Obstacle("obstacle-center");
+      // this.element.appendChild(obstacleCenter.element);
       if (player.score >= 300) {
-        
         player.positionLeft = 300;
         player.positionBottom = (this.height - player.height) / 2;
-        
-        // player.positionBottom = (myGame.height - this.height) / 2;
       } else if (player.score >= 100 && player.score < 300) {
-        
         player.positionLeft = 150;
         player.positionBottom = (this.height - player.height) / 2;
-       
-        // player.positionBottom = (myGame.height - this.height) / 2;
       } else {
-      
         player.positionLeft = 100;
         player.positionBottom = (this.height - player.height) / 2;
-        
-        // player.positionBottom = (myGame.height - this.height) / 2;
       }
-       
-       player.element.style.left = player.positionLeft + "px";
+      player.velocity = 3;
+      player.element.style.left = player.positionLeft + "px";
       player.element.style.bottom = player.positionBottom + "px";
       myGame.element.appendChild(player.element);
       myGame.element.appendChild(player.scoreElement);
       myGame.element.appendChild(player.livesElement);
-      // new Player();
+
       setTimeout(() => {
         // código asíncrono
-
-       this.pickpocket = new Pickpocket();
-       
+        this.pickpocket = new Pickpocket();
       }, 500);
     }
   }
