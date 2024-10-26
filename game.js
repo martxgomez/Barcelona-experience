@@ -67,6 +67,8 @@ class Game {
   changeScreenFinal(screen) {
     this.currentScreen = screen;
     this.clearScreen();
+    console.log("Final");
+    
 
 }
 }
