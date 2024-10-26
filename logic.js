@@ -58,6 +58,7 @@ function gameLoop() {
       player.move(player.direction);
     } else if (myGame.currentScreen === 2) {
       player.move(player.direction);
+      player.block(player.direction);
     }
 
     if (
@@ -70,6 +71,11 @@ function gameLoop() {
     if (myGame.currentScreen === 2) {
       if (myGame.pickpocket) {
         myGame.pickpocket.move();
+      }
+      if (
+        player.positionLeft + player.width >= myGame.width
+      ) {
+        myGame.changeScreenFinal(3);
       }
     }
   }

@@ -19,7 +19,7 @@ class Player {
     this.height = this.element.getBoundingClientRect().height;
     this.positionBottom = (myGame.height - this.height) / 2;
     this.positionLeft = 0;
-    this.velocity = 5;
+    this.velocity = 4.5;
     this.direction = null;
   }
 
@@ -89,8 +89,6 @@ class Player {
     });
   }
 
- 
-
   receiveDamage() {
     //marcamos los limites del player
     const playerLeft = this.positionLeft;
@@ -128,49 +126,63 @@ class Player {
     });
   }
 
-
-   //definimos el método para ser atacado por el pickpocket
-   picked() {
+  //definimos el método para ser atacado por el pickpocket
+  picked() {
     //marcamos los limites del player
     const playerLeft = this.positionLeft;
     const playerRight = this.positionLeft + this.width;
     const playerBottom = this.positionBottom;
     const playerTop = this.positionBottom + this.height;
 
+    //marcamos los limites del pickpocket
+    const pickpocketLeft = Pickpocket.positionLeft;
+    const pickpocketight = Pickpocket.positionLeft + pickpocket.width;
+    const pickpocketBottom = Pickpocket.positionBottom;
+    const pickpocketTop = Pickpocket.positionBottom + pickpocket.height;
 
-      //marcamos los limites del pickpocket
-      const pickpocketLeft = Pickpocket.positionLeft;
-      const pickpocketight = Pickpocket.positionLeft + tourist.width;
-      const pickpocketBottom = Pickpocket.positionBottom;
-      const pickpocketTop = Pickpocket.positionBottom + tourist.height;
+    if (
+      playerRight > pickpocketLeft &&
+      playerLeft < pickpocketight &&
+      playerTop > pickpocketBottom &&
+      playerBottom < pickpocketTop
+    ) {
+      myGame.gameOver = true;
+      this.gameOverElement = document.createElement("div");
+      this.gameOverElement.setAttribute("id", "game-over-2");
+      myGame.element.appendChild(this.gameOverElement);
+    }
+  }
 
-      if (
-        playerRight > pickpocketLeft &&
-        playerLeft < pickpocketight &&
-        playerTop > pickpocketBottom  &&
-        playerBottom < pickpocketTop &&){
-          myGame.gameOver = true;
-          this.gameOverElement = document.createElement("div");
-          this.gameOverElement.setAttribute("id", "game-over-1");
-          myGame.element.appendChild(this.gameOverElement);
-        }
-      }
-    
-  
   //definimos el metodo para que el player no pueda pasar por encima de los obstaculos
-  // block(){
-  //   const obstacleLeft = obstacle.positionLeft;
-  //       const obstacleRight = obstacle.positionLeft + obstacle.width;
-  //       const obstacleBottom = obstacle.positionBottom;
-  //       const obstacleTop = obstacle.positionBottom + obstacle.height;
+  //no se si añadir un obstaculo central
+  block(direction) {
+    //definimos límites de obstaculos
 
-  //       if (
-  //         playerRight > obstacleLeft &&
-  //         playerLeft < obstacleRight &&
-  //         playerTop > obstacleBottom&&
-  //         playerBottom < obstacleTop)
-  //   {}
-  // }
+    switch (direction) {
+      case "bottom":
+        this.positionBottom -= this.velocity;
+        if (this.positionBottom < myGame.obstacleBottom.height) {
+          this.positionBottom = myGame.obstacleBottom.height;
+        }
+        break;
+      case "top":
+        this.positionBottom += this.velocity;
+        if (
+          this.positionBottom >
+          myGame.height - myGame.obstacleTop.height - this.height
+        ) {
+          this.positionBottom =
+            myGame.height - myGame.obstacleTop.height - this.height;
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    this.element.style.left = this.positionLeft + "px";
+    this.element.style.bottom = this.positionBottom + "px";
+  }
 }
 
 const player = new Player();

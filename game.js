@@ -18,13 +18,28 @@ class Game {
     this.currentScreen = screen;
     this.clearScreen();
 
+    this.obstacleTop;
+    this.obstacleBottom;
+    this.obstacleCenter
+
     if (screen === 2) {
-      const obstacleTop = new Obstacle("obstacle-top");
-      this.element.appendChild(obstacleTop.element);
-      const obstacleBottom = new Obstacle("obstacle-bottom");
-      this.element.appendChild(obstacleBottom.element);
-      // const obstacleCenter = new Obstacle("obstacle-center");
-      // this.element.appendChild(obstacleCenter.element);
+      this.obstacleTop = new Obstacle("obstacle-top");
+      this.element.appendChild(this.obstacleTop.element);
+      this.obstacleTop.height = this.obstacleTop.element.getBoundingClientRect().height;
+      this.obstacleTop.width = this.obstacleTop.element.getBoundingClientRect().width;
+    
+
+      this.obstacleBottom = new Obstacle("obstacle-bottom");
+      this.element.appendChild(this.obstacleBottom.element);
+      this.obstacleBottom.height = this.obstacleBottom.element.getBoundingClientRect().height;
+      this.obstacleBottom.width = this.obstacleBottom.element.getBoundingClientRect().width;
+
+      // this.obstacleCenter = new Obstacle("obstacle-center");
+      // this.element.appendChild(this.obstacleCenter.element);
+      // this.obstacleBottom.height = this.obstacleBottom.getBoundingClientRect().height;
+      // this.obstacleBottom.width = this.obstacleBottom.getBoundingClientRect().width;
+
+
       if (player.score >= 300) {
         player.positionLeft = 300;
         player.positionBottom = (this.height - player.height) / 2;
@@ -48,6 +63,10 @@ class Game {
       }, 500);
     }
   }
+
+  changeScreenFinal(screen) {
+    this.currentScreen = screen;
+    this.clearScreen();
 }
 
 const myGame = new Game();

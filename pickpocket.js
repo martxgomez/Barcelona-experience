@@ -9,7 +9,7 @@ class Pickpocket {
     this.width = this.element.getBoundingClientRect().width;
     this.positionBottom = (myGame.height - this.height) / 2;
     this.positionLeft = 0;
-    this.velocity = 2;
+    this.velocity = 4;
   }
   move() {
     this.positionLeft += this.velocity;
