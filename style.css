@@ -18,13 +18,7 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-#game-area {
-  width: 90vw;
-  height: 85vh;
-  background-color: black;
-  position: relative;
-  overflow-x: hidden;
-}
+
 
 #player {
   width: 50px;
@@ -40,17 +34,23 @@ body {
   position: absolute;
   top: 10px;
   left: 20px;
-  background-color: rgba(128, 128, 0, 0.4);
+  
 }
 
-#life {
+#value{
+  font-size: 16px;
+  color: wheat;
+}
+
+
+#lives {
   width: 120px;
   height: 30px;
   position: absolute;
   right: 0;
   top: 10px;
   right: 20px;
-  background-color: olive;
+  color: wheat;
 }
 
 .cockroach {
@@ -80,14 +80,6 @@ body {
   z-index: 1000;
 }
 
-/* #screen-2 {
-  width: 90vw;
-  height: 85vh;
-  background-color: black;
-  position: relative;
-  overflow-x: hidden;
-  z-index: 1000;
-} */
 
 #pickpocket {
   background-color: red;
@@ -97,19 +89,19 @@ body {
   left: 0;
 }
 
-.obstacle-top{
+.obstacle-top {
   background-color: rgb(106, 106, 106);
   width: 100vw;
-  height: 20vh;
+  height: 145px;
   position: absolute;
   left: 0;
-  top:0;
+  top: 0;
 }
-.obstacle-bottom{
+.obstacle-bottom {
   background-color: rgb(106, 106, 106);
   width: 100vw;
-  height: 20vh;
+  height: 145px;
   position: absolute;
   left: 0;
-  bottom:0;
+  bottom: 0;
 }

@@ -1,3 +1,9 @@
+
+  // myGame.lives.innerHTML(<li>💖</li>)
+
+
+
+
 document.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "ArrowLeft":
@@ -72,6 +78,8 @@ function gameLoop() {
         myGame.pickpocket.move();
       }
     }
+
+    
   }
 }
 
