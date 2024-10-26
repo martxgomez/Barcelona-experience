@@ -38,6 +38,13 @@ function gameLoop() {
 
     if (myGame.currentScreen === 1) {
       player.receiveDamage();
+      if (frames % 100 === 0) {
+        new Cockroach();
+      }
+
+      if (frames % 80 === 0) {
+        new Tourist();
+      }
 
       Cockroach.cockroachArray.forEach((cockroach) => {
         cockroach.move();
@@ -48,14 +55,6 @@ function gameLoop() {
       });
       player.attack();
 
-      if (frames % 100 === 0) {
-        new Cockroach();
-      }
-
-      if (frames % 80 === 0) {
-        new Tourist();
-      }
-
       player.move(player.direction);
     } else if (myGame.currentScreen === 2) {
       player.move(player.direction);
@@ -65,7 +64,13 @@ function gameLoop() {
       myGame.currentScreen === 1 &&
       player.positionLeft + player.width >= myGame.width
     ) {
-      myGame.changeScreen(2);
+      myGame.changeScreen(2, Pickpocket);
+    }
+
+    if (myGame.currentScreen === 2) {
+      if (myGame.pickpocket) {
+        myGame.pickpocket.move();
+      }
     }
   }
 }
