@@ -69,7 +69,7 @@ Segundo escenario: Interior del metro (batalla con el carterista)
 
 - [ ] **Desarrollo del Juego**
 
-  - [ ] **Escenario 1: Andén del metro**
+  - [X] **Escenario 1: Andén del metro**
 
     - [x] Implementar el movimiento del jugador.
     - [X] Lógica para esquivar turistas.
@@ -77,11 +77,11 @@ Segundo escenario: Interior del metro (batalla con el carterista)
     - [X] Crear la pantalla de derrota.
     - [X] Transición a la pantalla del interior del metro.
 
-  - [ ] **Escenario 2: Interior del metro**
-    - [ ] Lógica para el enfrentamiento con el carterista.
-    - [ ] Lógica para determinar el éxito o fracaso.
-    - [ ] Pantalla de derrota.
-    - [ ] Pantalla de victoria.
+  - [X] **Escenario 2: Interior del metro**
+    - [X] Lógica para el enfrentamiento con el carterista.
+    - [X] Lógica para determinar el éxito o fracaso.
+    - [X] Pantalla de derrota.
+    - [X] Pantalla de victoria.
 
 - [ ] **Estilo y Diseño (CSS)**
 
