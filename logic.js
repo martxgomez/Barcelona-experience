@@ -71,6 +71,7 @@ function gameLoop() {
     if (myGame.currentScreen === 2) {
       if (myGame.pickpocket) {
         myGame.pickpocket.move();
+        myGame.pickpocket.pick();
       }
       if (
         player.positionLeft + player.width >= myGame.width

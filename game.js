@@ -65,8 +65,12 @@ class Game {
   }
 
   changeScreenFinal(screen) {
+    console.log("hola");
+    
     this.currentScreen = screen;
     this.clearScreen();
+    this.element.classList.add("win");
+    console.log("Clases actuales del elemento:", this.element.classList)
 }}
 
 const myGame = new Game();

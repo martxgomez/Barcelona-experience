@@ -126,32 +126,8 @@ class Player {
     });
   }
 
-  //definimos el método para ser atacado por el pickpocket
-  picked() {
-    //marcamos los limites del player
-    const playerLeft = this.positionLeft;
-    const playerRight = this.positionLeft + this.width;
-    const playerBottom = this.positionBottom;
-    const playerTop = this.positionBottom + this.height;
-
-    //marcamos los limites del pickpocket
-    const pickpocketLeft = Pickpocket.positionLeft;
-    const pickpocketight = Pickpocket.positionLeft + pickpocket.width;
-    const pickpocketBottom = Pickpocket.positionBottom;
-    const pickpocketTop = Pickpocket.positionBottom + pickpocket.height;
-
-    if (
-      playerRight > pickpocketLeft &&
-      playerLeft < pickpocketight &&
-      playerTop > pickpocketBottom &&
-      playerBottom < pickpocketTop
-    ) {
-      myGame.gameOver = true;
-      this.gameOverElement = document.createElement("div");
-      this.gameOverElement.setAttribute("id", "game-over-2");
-      myGame.element.appendChild(this.gameOverElement);
-    }
-  }
+ 
+  
 
   //definimos el metodo para que el player no pueda pasar por encima de los obstaculos
   //no se si añadir un obstaculo central

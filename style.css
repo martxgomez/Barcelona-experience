@@ -79,15 +79,16 @@ body {
   background-position: center;
   z-index: 1000;
 }
-
-/* #screen-2 {
+#game-over-2 {
   width: 90vw;
   height: 85vh;
-  background-color: black;
-  position: relative;
-  overflow-x: hidden;
+  background-image: url(./images/Pantalla\ perder-2.png);
+  position: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   z-index: 1000;
-} */
+}
 
 #pickpocket {
   background-color: red;
@@ -114,3 +115,13 @@ body {
   bottom:0;
 }
 
+.win{
+  width: 90vw;
+  height: 85vh;
+  background-image: url(./images/Pantalla\ Ganar.png);
+  position: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1000;
+}

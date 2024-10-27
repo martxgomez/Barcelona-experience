@@ -20,5 +20,31 @@ class Pickpocket {
       this.element.remove();
     }
   }
+ //definimos el método para robar
+  pick() {
+    //marcamos los limites del player
+    const playerLeft = player.positionLeft;
+    const playerRight = player.positionLeft + player.width;
+    const playerBottom = player.positionBottom;
+    const playerTop = player.positionBottom + player.height;
+
+    //marcamos los limites del pickpocket
+    const pickpocketLeft = this.positionLeft;
+    const pickpocketRight = this.positionLeft + this.width;
+    const pickpocketBottom = this.positionBottom;
+    const pickpocketTop = this.positionBottom + this.height;
+
+    if (
+      playerRight > pickpocketLeft &&
+      playerLeft < pickpocketRight &&
+      playerTop > pickpocketBottom &&
+      playerBottom < pickpocketTop
+    ) {
+      myGame.gameOver = true;
+      player.gameOverElement = document.createElement("div");
+      player.gameOverElement.setAttribute("id", "game-over-2");
+      myGame.element.appendChild(player.gameOverElement);
+    }
+  }
 
 }
