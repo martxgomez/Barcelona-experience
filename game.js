@@ -1,15 +1,22 @@
 class Game {
   constructor() {
     this.score = 0;
-    this.lives = 5;
+    this.lives = 3;
     this.gameOver = false;
     this.currentScreen = 1;
+    this.livesElement = document.querySelector("#lives");
+    this.levelElement = document.querySelector("#score");
 
     this.element = document.querySelector("#game-area");
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
   }
-
+  updateLives() {
+    this.livesElement.innerText = "❤️".repeat(this.lives);
+  }
+  updateScore() {
+    this.scoreElement.innerText = this.score.toString();
+  }
   clearScreen() {
     this.element.innerHTML = "";
   }

@@ -5,15 +5,15 @@ class Player {
     this.element.setAttribute("id", "player");
     myGame.element.appendChild(this.element);
 
-    this.scoreElement = document.createElement("div");
-    this.scoreElement.setAttribute("id", "score");
-    this.score = 0;
-    myGame.element.appendChild(this.scoreElement);
+    // this.scoreElement = document.createElement("div");
+    // this.scoreElement.setAttribute("id", "score");
+    // this.score = 0;
+    // myGame.element.appendChild(this.scoreElement);
 
-    this.livesElement = document.createElement("div");
-    this.livesElement.setAttribute("id", "life");
-    this.lives = 3;
-    myGame.element.appendChild(this.livesElement);
+    // this.livesElement = document.createElement("div");
+    // this.livesElement.setAttribute("id", "life");
+    // this.lives = 3;
+    // myGame.element.appendChild(this.livesElement);
 
     this.width = this.element.getBoundingClientRect().width;
     this.height = this.element.getBoundingClientRect().height;
@@ -111,12 +111,11 @@ class Player {
         playerBottom < touristTop &&
         !tourist.hasDamagedPlayer
       ) {
-        this.lives--;
-        this.livesElement.innerText = this.lives;
-        console.log(this.lives);
+        myGame.lives--;
+       myGame.updateLives();
         tourist.hasDamagedPlayer = true;
         //si pierde todas las vidas pierde
-        if (this.lives <= 0) {
+        if (!myGame.lives) {
           myGame.gameOver = true;
           this.gameOverElement = document.createElement("div");
           this.gameOverElement.setAttribute("id", "game-over-1");
