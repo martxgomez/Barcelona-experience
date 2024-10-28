@@ -15,7 +15,7 @@ class Game {
     this.updateScore();
   }
   updateLives() {
-    this.livesElement.innerText = "❤️".repeat(this.lives);
+    this.livesElement.innerText = "❤️‍🔥".repeat(this.lives);
   }
   updateScore() {
     this.scoreElement.innerText = this.score.toString();
@@ -52,7 +52,7 @@ class Game {
       // this.obstacleBottom.height = this.obstacleBottom.getBoundingClientRect().height;
       // this.obstacleBottom.width = this.obstacleBottom.getBoundingClientRect().width;
 
-      if (player.score >= 300) {
+      if (myGame.score >= 300) {
         player.positionLeft = 300;
         player.positionBottom = (this.height - player.height) / 2;
       } else if (player.score >= 100 && player.score < 300) {

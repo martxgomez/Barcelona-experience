@@ -14,6 +14,7 @@ document.addEventListener("keydown", (event) => {
       break;
   }
   player.attack();
+
 });
 
 document.addEventListener("keyup", (event) => {
@@ -54,6 +55,7 @@ function gameLoop() {
         tourist.move();
       });
       player.attack();
+    
 
       player.move(player.direction);
     } else if (myGame.currentScreen === 2) {
@@ -78,6 +80,8 @@ function gameLoop() {
       }
     }
   }
+
 }
+
 
 requestAnimationFrame(gameLoop);

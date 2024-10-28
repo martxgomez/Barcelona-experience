@@ -95,24 +95,24 @@ body {
   left: 0;
 }
 
-.obstacle-top{
+.obstacle-top {
   background-color: rgb(106, 106, 106);
   width: 100vw;
   height: 20vh;
   position: absolute;
   left: 0;
-  top:0;
+  top: 0;
 }
-.obstacle-bottom{
+.obstacle-bottom {
   background-color: rgb(106, 106, 106);
   width: 100vw;
   height: 20vh;
   position: absolute;
   left: 0;
-  bottom:0;
+  bottom: 0;
 }
 
-.win{
+.win {
   width: 90vw;
   height: 85vh;
   background-image: url(./images/Pantalla\ Ganar.png);
@@ -122,3 +122,24 @@ body {
   background-position: center;
   z-index: 1000;
 }
+
+.score-ad {
+  background-image: url(/images/50puntos.webp);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  animation: score-ad-animation 300ms;
+}
+
+@keyframes score-ad-animation {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(3) rotate(15deg);
+  }
+}
+

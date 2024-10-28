@@ -21,6 +21,10 @@ class Player {
     this.positionLeft = 0;
     this.velocity = 4.5;
     this.direction = null;
+
+    this.crunchSound = new Audio(
+      "./sounds/369602__evanboyerman__bone-crunchcrack-3-mixed.wav"
+    );
   }
 
   //Definimos el movimiento del jugador
@@ -85,6 +89,9 @@ class Player {
         myGame.score += 50;
         myGame.updateScore();
         cockroach.destroy();
+        appearScoreAdElement(cockroach.positionLeft, cockroach.positionBottom);
+        this.crunchSound.currentTime = 0;
+        this.crunchSound.play();
       }
     });
   }
@@ -156,5 +163,15 @@ class Player {
     this.element.style.bottom = this.positionBottom + "px";
   }
 }
+function appearScoreAdElement(left, bottom) {
+  const scoreAdElement = document.createElement("div");
+  scoreAdElement.classList.add("score-ad");
+  scoreAdElement.style.left = left + "px";
+  scoreAdElement.style.bottom = bottom + "px";
+  myGame.element.appendChild(scoreAdElement);
 
+  setTimeout(() => {
+    scoreAdElement.remove();
+  }, 300);
+}
 const player = new Player();
