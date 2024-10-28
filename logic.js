@@ -73,9 +73,7 @@ function gameLoop() {
         myGame.pickpocket.move();
         myGame.pickpocket.pick();
       }
-      if (
-        player.positionLeft + player.width >= myGame.width
-      ) {
+      if (player.positionLeft + player.width >= myGame.width) {
         myGame.changeScreenFinal(3);
       }
     }

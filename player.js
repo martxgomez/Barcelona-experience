@@ -82,8 +82,8 @@ class Player {
         playerTop > cockroachBottom &&
         playerBottom < cockroachTop
       ) {
-        this.score += 50;
-        this.scoreElement.innerText = this.score;
+        myGame.score += 50;
+        myGame.updateScore();
         cockroach.destroy();
       }
     });
@@ -112,7 +112,7 @@ class Player {
         !tourist.hasDamagedPlayer
       ) {
         myGame.lives--;
-       myGame.updateLives();
+        myGame.updateLives();
         tourist.hasDamagedPlayer = true;
         //si pierde todas las vidas pierde
         if (!myGame.lives) {
@@ -124,9 +124,6 @@ class Player {
       }
     });
   }
-
- 
-  
 
   //definimos el metodo para que el player no pueda pasar por encima de los obstaculos
   //no se si añadir un obstaculo central
