@@ -121,13 +121,17 @@ class Player {
         myGame.lives--;
         myGame.updateLives();
         tourist.hasDamagedPlayer = true;
-        //si pierde todas las vidas pierde
-        if (!myGame.lives) {
-          myGame.gameOver = true;
-          this.gameOverElement = document.createElement("div");
-          this.gameOverElement.setAttribute("id", "game-over-1");
-          myGame.element.appendChild(this.gameOverElement);
-        }
+        myGame.element.classList.add("shake");
+        setTimeout(() => {
+          myGame.element.classList.remove("shake");
+        }, 300);
+      }
+      //si pierde todas las vidas pierde
+      if (!myGame.lives) {
+        myGame.gameOver = true;
+        this.gameOverElement = document.createElement("div");
+        this.gameOverElement.setAttribute("id", "game-over-1");
+        myGame.element.appendChild(this.gameOverElement);
       }
     });
   }
