@@ -23,8 +23,16 @@ class Player {
     this.direction = null;
 
     this.crunchSound = new Audio(
-      "./sounds/369602__evanboyerman__bone-crunchcrack-3-mixed.wav"
+      "./sounds/Crunch.wav"
     );
+
+    this.excuseMeSound = new Audio(
+      "./sounds/excuseMe.wav"
+    );
+
+    this.sagradaFamilia =new Audio("./sounds/SagradaFamilia.mp3")
+
+    this.sangria = new Audio ("./sounds/Sangria.mp3")
   }
 
   //Definimos el movimiento del jugador
@@ -121,6 +129,20 @@ class Player {
         myGame.lives--;
         myGame.updateLives();
         tourist.hasDamagedPlayer = true;
+
+        this.numberSound = Math.floor(Math.random() * 3);
+        if ((this.numberSound = 0)) {
+          this.excuseMeSound.currentTime = 0;
+          this.excuseMeSound.play();
+        } else if ((this.numberSound = 1)) {
+          this.sagradaFamilia.currentTime = 0;
+          this.sagradaFamilia.play();
+        }else{
+          this.sangria.currentTime = 0;
+          this.sangria.play();
+        }
+
+       
         myGame.element.classList.add("shake");
         setTimeout(() => {
           myGame.element.classList.remove("shake");
