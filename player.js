@@ -22,17 +22,14 @@ class Player {
     this.velocity = 4.5;
     this.direction = null;
 
-    this.crunchSound = new Audio(
-      "./sounds/Crunch.wav"
-    );
+    this.crunchSound = new Audio("./sounds/Crunch.wav");
 
-    this.excuseMeSound = new Audio(
-      "./sounds/excuseMe.wav"
-    );
+    this.excuseMeSound = new Audio("./sounds/excuseMe.wav");
 
-    this.sagradaFamilia =new Audio("./sounds/SagradaFamilia.mp3")
+    this.sagradaFamilia = new Audio("./sounds/SagradaFamilia.mp3");
 
-    this.sangria = new Audio ("./sounds/Sangria.mp3")
+    this.sangria = new Audio("./sounds/Sangria.mp3");
+    this.counter = 0;
   }
 
   //Definimos el movimiento del jugador
@@ -130,19 +127,18 @@ class Player {
         myGame.updateLives();
         tourist.hasDamagedPlayer = true;
 
-        this.numberSound = Math.floor(Math.random() * 3);
-        if ((this.numberSound = 0)) {
-          this.excuseMeSound.currentTime = 0;
-          this.excuseMeSound.play();
-        } else if ((this.numberSound = 1)) {
+        if (this.counter === 0) {
           this.sagradaFamilia.currentTime = 0;
           this.sagradaFamilia.play();
-        }else{
+        } else if (this.counter === 1) {
+          this.excuseMeSound.currentTime = 0;
+          this.excuseMeSound.play();
+        } else {
           this.sangria.currentTime = 0;
           this.sangria.play();
         }
+        this.counter = (this.counter + 1) % 3;
 
-       
         myGame.element.classList.add("shake");
         setTimeout(() => {
           myGame.element.classList.remove("shake");
