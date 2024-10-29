@@ -22,8 +22,8 @@ body {
 #player {
   background-image: url(./images/Player.png);
   border: red solid;
-  width: 90px;
-  height: 110px;
+  width: 95px;
+  height: 100px;
   position: absolute;
   left: 0;
   background-size:contain;
