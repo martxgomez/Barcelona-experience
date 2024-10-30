@@ -150,6 +150,8 @@ class Player {
         this.gameOverElement = document.createElement("div");
         this.gameOverElement.setAttribute("id", "game-over-1");
         myGame.element.appendChild(this.gameOverElement);
+        myGame.ambientSound.pause();
+       
       }
     });
   }

@@ -14,7 +14,6 @@ document.addEventListener("keydown", (event) => {
       break;
   }
   player.attack();
-
 });
 
 document.addEventListener("keyup", (event) => {
@@ -38,6 +37,12 @@ function gameLoop() {
     frames++;
 
     if (myGame.currentScreen === 1) {
+      if (!myGame.isAmbientSoundPlaying) {
+        myGame.ambientSound.currentTime = 0;
+        myGame.ambientSound.play();
+        myGame.isAmbientSoundPlaying = true;
+      }
+     
       player.receiveDamage();
       if (frames % 100 === 0) {
         new Cockroach();
@@ -55,7 +60,6 @@ function gameLoop() {
         tourist.move();
       });
       player.attack();
-    
 
       player.move(player.direction);
     } else if (myGame.currentScreen === 2) {
@@ -71,17 +75,22 @@ function gameLoop() {
     }
 
     if (myGame.currentScreen === 2) {
+      if (!myGame.isAmbientSoundPlaying) {
+        myGame.ambientSoundMetro.currentTime = 0;
+        myGame.ambientSoundMetro.play();
+        myGame.isAmbientSoundMetroPlaying = true;
+      }
       if (myGame.pickpocket) {
         myGame.pickpocket.move();
         myGame.pickpocket.pick();
+      
       }
       if (player.positionLeft + player.width >= myGame.width) {
         myGame.changeScreenFinal(3);
+        myGame.ambientSoundMetro.pause();
       }
     }
   }
-
 }
-
 
 requestAnimationFrame(gameLoop);

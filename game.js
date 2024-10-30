@@ -13,9 +13,15 @@ class Game {
 
     this.updateLives();
     this.updateScore();
+
+    this.ambientSound = new Audio("./sounds/ambientSound.wav");
+    this.ambientSoundMetro = new Audio("./sounds/ambientSoundMetro.m4a");
+    this.isAmbientSoundPlaying = false;
+    this.isAmbientSoundMetroPlaying = false;
   }
+
   updateLives() {
-    this.livesElement.innerText = "❤️‍🔥".repeat(this.lives);
+    this.livesElement.innerText = "♥️".repeat(this.lives);
   }
   updateScore() {
     this.scoreElement.innerText = this.score.toString();
@@ -27,12 +33,14 @@ class Game {
   changeScreen(screen, Pickpocket) {
     this.currentScreen = screen;
     this.clearScreen();
+ 
 
     this.obstacleTop;
     this.obstacleBottom;
     this.obstacleCenter;
 
     if (screen === 2) {
+      this.element.setAttribute( "id", "game-area-2")
       this.obstacleTop = new Obstacle("obstacle-top");
       this.element.appendChild(this.obstacleTop.element);
       this.obstacleTop.height =
@@ -66,7 +74,6 @@ class Game {
       player.element.style.left = player.positionLeft + "px";
       player.element.style.bottom = player.positionBottom + "px";
       myGame.element.appendChild(player.element);
-    
 
       setTimeout(() => {
         // código asíncrono
@@ -76,8 +83,6 @@ class Game {
   }
 
   changeScreenFinal(screen) {
-    console.log("hola");
-
     this.currentScreen = screen;
     this.clearScreen();
     this.element.classList.add("win");
