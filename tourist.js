@@ -2,11 +2,11 @@ class Tourist {
   //Creamos un array donde vayan apareciendo los turistas
 
   static touristsArray = [];
-  static touristClasses =["touristOne", "touristTwo", "touristThree"];
+  static touristClasses =["touristOne", "touristTwo", "touristThree", "touristFour","touristFive"];
   constructor() {
     //Definimos en pantalla y su posición aleatoria
     this.element = document.createElement("div");
-    this.element.classList.add(Tourist.touristClasses[Math.floor(Math.random()*3)]);
+    this.element.classList.add(Tourist.touristClasses[Math.floor(Math.random()*5)]);
    
     myGame.element.appendChild(this.element);
     this.height = this.element.getBoundingClientRect().height;
