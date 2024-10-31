@@ -75,11 +75,15 @@ function gameLoop() {
     }
 
     if (myGame.currentScreen === 2) {
-      if (!myGame.isAmbientSoundPlaying) {
-        myGame.ambientSoundMetro.currentTime = 0;
+      if (myGame.isAmbientSoundPlaying) {
+        myGame.ambientSound.pause();
+        myGame.isAmbientSoundPlaying = false;
+      }
+      if (!myGame.isAmbientSoundMetroPlaying) {
+        myGame.ambientSoundMetro.currentTime = 10;
         myGame.ambientSoundMetro.play();
         myGame.isAmbientSoundMetroPlaying = true;
-      }
+     }
       if (myGame.pickpocket) {
         myGame.pickpocket.move();
         myGame.pickpocket.pick();
@@ -89,7 +93,13 @@ function gameLoop() {
         myGame.changeScreenFinal(3);
         myGame.ambientSoundMetro.pause();
       }
+
     }
+
+    if (myGame.currentScreen === 3) {
+      myGame.ambientSoundMetro.pause();
+      myGame.isAmbientSoundMetroPlaying = false;
+   }
   }
 }
 
