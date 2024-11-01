@@ -42,7 +42,7 @@ function gameLoop() {
         myGame.ambientSound.play();
         myGame.isAmbientSoundPlaying = true;
       }
-     
+
       player.receiveDamage();
       if (frames % 100 === 0) {
         new Cockroach();
@@ -83,23 +83,22 @@ function gameLoop() {
         myGame.ambientSoundMetro.currentTime = 10;
         myGame.ambientSoundMetro.play();
         myGame.isAmbientSoundMetroPlaying = true;
-     }
+      }
       if (myGame.pickpocket) {
         myGame.pickpocket.move();
         myGame.pickpocket.pick();
-      
       }
       if (player.positionLeft + player.width >= myGame.width) {
         myGame.changeScreenFinal(3);
         myGame.ambientSoundMetro.pause();
       }
-
     }
 
     if (myGame.currentScreen === 3) {
       myGame.ambientSoundMetro.pause();
       myGame.isAmbientSoundMetroPlaying = false;
-   }
+      window.location.href = "./ganar.html";
+    }
   }
 }
 

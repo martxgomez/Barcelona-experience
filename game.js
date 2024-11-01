@@ -86,7 +86,7 @@ class Game {
     this.currentScreen = screen;
     this.clearScreen();
     this.element.classList.add("win");
-    console.log("Clases actuales del elemento:", this.element.classList);
+  
   }
 }
 
