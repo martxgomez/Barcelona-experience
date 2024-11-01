@@ -208,16 +208,28 @@ text-align: center;
   background-image: url(./images/tourist-5.png);
 }
 
-
+.game-over{
+  margin: 10%;
+    h1 {
+font-size: 7em;
+    }
+    p{
+      font-size: 1.5em;
+    }
+  
+}
 #game-over-1 {
-  width: 90vw;
-  height: 85vh;
-  background-image: url(./images/Pantalla\ perder-1.png);
-  position: fixed;
-  background-size: contain;
+  width: 100dvw;
+  height: 100dvh;
+  background-image: url(./images/Pantallas.png);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 #game-over-2 {
   width: 90vw;
@@ -228,6 +240,22 @@ text-align: center;
   background-repeat: no-repeat;
   background-position: center;
   z-index: 1000;
+}
+#restart-game-button{
+  font-family: "Lexend", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  width: 230px;
+  height: 50px;
+  margin: -20px auto 200px;
+  border: none;
+  border-radius:16px;
+  background: linear-gradient(to bottom right, #eab5ac, #d45d42);
+  cursor: pointer;
+  font-size: 1em;
+  
+
 }
 
 #pickpocket {
