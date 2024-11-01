@@ -74,7 +74,7 @@ function gameLoop() {
       myGame.changeScreen(2, Pickpocket);
     }
 
-    if (myGame.currentScreen === 2) {
+    else if (myGame.currentScreen === 2) {
       if (myGame.isAmbientSoundPlaying) {
         myGame.ambientSound.pause();
         myGame.isAmbientSoundPlaying = false;
@@ -94,7 +94,7 @@ function gameLoop() {
       }
     }
 
-    if (myGame.currentScreen === 3) {
+    else if (myGame.currentScreen === 3) {
       myGame.ambientSoundMetro.pause();
       myGame.isAmbientSoundMetroPlaying = false;
       window.location.href = "./ganar.html";

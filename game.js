@@ -31,8 +31,11 @@ class Game {
   }
 
   changeScreen(screen, Pickpocket) {
+   
     this.currentScreen = screen;
     this.clearScreen();
+    Cockroach.cockroachArray=[];
+    Tourist.touristsArray=[];
  
 
     this.obstacleTop;

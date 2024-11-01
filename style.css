@@ -128,7 +128,6 @@ header {
 
 #player {
   background-image: url(./images/Player.png);
-  border: red solid;
   width: 95px;
   height: 100px;
   position: absolute;
@@ -159,7 +158,6 @@ header {
   position: absolute;
   top: 10px;
   left: 20px;
-  border: red solid;
   z-index: 1000;
 }
 
@@ -168,7 +166,6 @@ header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  border: red solid;
   width: 50px;
   height: 35px;
   position: absolute;
@@ -182,7 +179,6 @@ header {
 .touristFive {
   width: 80px;
   height: 120px;
-  border: red solid;
   position: absolute;
   left: 0;
   z-index: 2;
@@ -291,7 +287,6 @@ header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  border: red solid;
   width: 80px;
   height: 120px;
   position: absolute;
@@ -300,7 +295,6 @@ header {
 
 .obstacle-top {
   background-color: rgba(106, 106, 106, 0);
-  border: red solid;
   width: 100vw;
   height: 20vh;
   position: absolute;
@@ -309,7 +303,6 @@ header {
 }
 .obstacle-bottom {
   background-color: rgba(106, 106, 106, 0);
-  border: red solid;
   width: 100vw;
   height: 20vh;
   position: absolute;
