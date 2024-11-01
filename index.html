@@ -38,20 +38,20 @@
         </header>
         <button id="start-game-button">¡A por ellos!</button>
         <script>
+          const introSound = new Audio("./sounds/Intro.mp3");
+          function playIntroSound() {
+            introSound.currentTime = 0;
+            introSound.play().catch((error) => {
+              console.error(
+                "Error al reproducir el sonido de introducción:",
+                error
+              );
+            });
+          }
           window.onload = () => {
-            const introSound = new Audio("./sounds/Intro.mp3");
-
             document.addEventListener("keydown", (event) => {
               if (event.code === "Space") {
-                if (introSound.paused) {
-                  introSound.currentTime = 0;
-                  introSound.play().catch((error) => {
-                    console.error(
-                      "Error al reproducir el sonido de introducción:",
-                      error
-                    );
-                  });
-                }
+                playIntroSound();
               }
             });
 
