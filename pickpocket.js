@@ -41,10 +41,8 @@ class Pickpocket {
       playerBottom < pickpocketTop
     ) {
       myGame.gameOver = true;
-      player.gameOverElement = document.createElement("div");
-      player.gameOverElement.setAttribute("id", "game-over-2");
-      myGame.element.appendChild(player.gameOverElement);
       myGame.ambientSoundMetro.pause();
+       window.location.href = "./perder-2.html"
     }
   }
 
