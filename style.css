@@ -210,11 +210,15 @@ text-align: center;
 
 .game-over{
   margin: 10%;
-    h1 {
+    h1{
 font-size: 7em;
     }
+    h3{
+font-size: 1.8em;
+margin:-20px auto 30px auto
+    }
     p{
-      font-size: 1.5em;
+      font-size: 1.2em;
     }
   
 }
@@ -232,14 +236,17 @@ font-size: 7em;
   text-align: center;
 }
 #game-over-2 {
-  width: 90vw;
-  height: 85vh;
-  background-image: url(./images/Pantalla\ perder-2.png);
-  position: fixed;
-  background-size: contain;
+  width: 100dvw;
+  height: 100dvh;
+  background-image: url(./images/Pantallas.png);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 #restart-game-button{
   font-family: "Lexend", serif;
