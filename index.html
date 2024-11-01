@@ -40,17 +40,20 @@
         <script>
           window.onload = () => {
             const introSound = new Audio("./sounds/Intro.mp3");
-            let hasPlayed = false;
-            document.addEventListener("mousemove", () => {
-              if (!hasPlayed) {
-                hasPlayed = true;
-                introSound.play().catch((error) => {
-                  console.error("Error al reproducir el audio:", error);
-                });
+
+            document.addEventListener("keydown", (event) => {
+              if (event.code === "Space") {
+                if (introSound.paused) {
+                  introSound.currentTime = 0;
+                  introSound.play().catch((error) => {
+                    console.error(
+                      "Error al reproducir el sonido de introducción:",
+                      error
+                    );
+                  });
+                }
               }
             });
-            introSound.currentTime = 0;
-            introSound.play();
 
             document
               .getElementById("start-game-button")
