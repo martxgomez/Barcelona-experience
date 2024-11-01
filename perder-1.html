@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <title>Barcelona's Experience</title>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap");
-      </style>
-</head>
-<body>
-<section id="game-over-1">
-<section class="game-over" >
-    <h1>GAME OVER</h1>
-    <p>Los turistas no paran de preguntarte y llegas tarde al trabajo.</p>
-</section>
-<button id="restart-game-button"> ¿Lo volvemos a intentar?</button>
-<script>
-  document
-    .getElementById("restart-game-button")
-    .addEventListener("click", (event) => {
-      window.location.href = "./index.html";
-    })
-</script>
-</section>
-<script src="./game.js"></script>
-<script src="./obstacle.js"></script>
-<script src="./cockroach.js"></script>
-<script src="./tourist.js"></script>
-<script src="./player.js"></script>
-<script src="./pickpocket.js"></script>
-<script src="./logic.js"></script>
-</body>
+      @import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap");
+    </style>
+  </head>
+  <body>
+    <section id="game-over-1">
+      <section class="game-over">
+        <h1>GAME OVER</h1>
+        <p>Los turistas no paran de preguntarte y llegas tarde al trabajo.</p>
+      </section>
+      <button id="restart-game-button">¿Lo volvemos a intentar?</button>
+      <script>
+        window.onload = () => {
+          const gameOverSound = new Audio("./sounds/Game-over.wav");
+          gameOverSound.currentTime = 0;
+          gameOverSound.play();
+
+          document
+            .getElementById("restart-game-button")
+            .addEventListener("click", (event) => {
+              window.location.href = "./index.html";
+            });
+        };
+      </script>
+    </section>
+  </body>
 </html>
