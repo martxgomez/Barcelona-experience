@@ -14,10 +14,12 @@ class Game {
     this.updateLives();
     this.updateScore();
 
-    this.ambientSound = new Audio("./sounds/ambientSound.wav");
-    this.ambientSoundMetro = new Audio("./sounds/ambientSoundMetro.m4a");
-    this.isAmbientSoundPlaying = false;
-    this.isAmbientSoundMetroPlaying = false;
+    this.ambienceSound = new Audio("./sounds/ambienceSound.wav");
+    this.ambienceSoundMetro = new Audio("./sounds/ambienceSoundMetro.m4a");
+    this.isAmbienceSoundPlaying = false;
+    this.isAmbienceSoundMetroPlaying = false;
+    this.ambienceOffice= new Audio ("./sounds/ambienceOffice.mp3")
+    this.isAmbienceOfficePlaying = false;
   }
 
   updateLives() {

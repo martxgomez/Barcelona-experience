@@ -41,7 +41,7 @@ class Pickpocket {
       playerBottom < pickpocketTop
     ) {
       myGame.gameOver = true;
-      myGame.ambientSoundMetro.pause();
+      myGame.ambienceSoundMetro.pause();
        window.location.href = "./perder-2.html"
     }
   }

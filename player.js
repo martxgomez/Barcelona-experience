@@ -147,8 +147,11 @@ class Player {
       //si pierde todas las vidas pierde
       if (!myGame.lives) {
         myGame.gameOver = true;
-        myGame.ambientSound.pause();
-        window.location.href = "./perder-1.html"
+        myGame.ambienceSound.pause();
+        setTimeout(() => {
+          window.location.href = "./perder-1.html"
+        }, 500);
+       
        
       }
     });

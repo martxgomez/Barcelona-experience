@@ -37,10 +37,10 @@ function gameLoop() {
     frames++;
 
     if (myGame.currentScreen === 1) {
-      if (!myGame.isAmbientSoundPlaying) {
-        myGame.ambientSound.currentTime = 0;
-        myGame.ambientSound.play();
-        myGame.isAmbientSoundPlaying = true;
+      if (!myGame.isAmbienceSoundPlaying) {
+        myGame.ambienceSound.currentTime = 0;
+        myGame.ambienceSound.play();
+        myGame.isAmbienceSoundPlaying = true;
       }
 
       player.receiveDamage();
@@ -75,14 +75,14 @@ function gameLoop() {
     }
 
     else if (myGame.currentScreen === 2) {
-      if (myGame.isAmbientSoundPlaying) {
-        myGame.ambientSound.pause();
-        myGame.isAmbientSoundPlaying = false;
+      if (myGame.isAmbienceSoundPlaying) {
+        myGame.ambienceSound.pause();
+        myGame.isAmbienceSoundPlaying = false;
       }
-      if (!myGame.isAmbientSoundMetroPlaying) {
-        myGame.ambientSoundMetro.currentTime = 10;
-        myGame.ambientSoundMetro.play();
-        myGame.isAmbientSoundMetroPlaying = true;
+      if (!myGame.isAmbienceSoundMetroPlaying) {
+        myGame.ambienceSoundMetro.currentTime = 10;
+        myGame.ambienceSoundMetro.play();
+        myGame.isAmbienceSoundMetroPlaying = true;
       }
       if (myGame.pickpocket) {
         myGame.pickpocket.move();
@@ -90,16 +90,20 @@ function gameLoop() {
       }
       if (player.positionLeft + player.width >= myGame.width) {
         myGame.changeScreenFinal(3);
-        myGame.ambientSoundMetro.pause();
+        myGame.ambienceSoundMetro.pause();
       }
     }
 
     else if (myGame.currentScreen === 3) {
-      myGame.ambientSoundMetro.pause();
-      myGame.isAmbientSoundMetroPlaying = false;
+      myGame.ambienceSoundMetro.pause();
+      myGame.isAmbienceSoundMetroPlaying = false;
       window.location.href = "./ganar.html";
+      if (!myGame.isAmbienceOfficePlaying) {
+        myGame.ambienceOffice.currentTime = 10;
+        myGame.ambienceOffice.play();
+        myGame.isAmbienceOfficePlaying = true;
     }
   }
-}
+}}
 
 requestAnimationFrame(gameLoop);

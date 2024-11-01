@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <title>Barcelona's Experience</title>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap");
-      </style>
-</head>
-<body>
-<section id="win">
-<section class="win-win" >
-    <h1>¡FELICIDADES!</h1>
-    <h3>Has ganado</h3>
-    <p>Aunque prefieres estar con los turistas visitando Barcelona.</p>
-</section>
-<button id="restart-game-button"> ¿Volvemos a emprezar?</button>
-<script>
-  document
-    .getElementById("restart-game-button")
-    .addEventListener("click", (event) => {
-      window.location.href = "./hello.html";
-    })
-</script>
-</section>
-</body>
+      @import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap");
+    </style>
+  </head>
+  <body>
+    <section id="win">
+      <section class="win-win">
+        <h1>¡FELICIDADES!</h1>
+        <h3>Has ganado</h3>
+        <p>Aunque prefieres estar con los turistas visitando Barcelona.</p>
+      </section>
+      <button id="restart-game-button">¿Volvemos a emprezar?</button>
+      <script>
+        window.onload = () => {
+          const victorySound = new Audio("./sounds/Victoria.mp3");
+          const ambienceOffice = new Audio("./sounds/ambienceOffice.mp3");
+
+          victorySound.currentTime = 1.5;
+          ambienceOffice.currentTime = 0;
+
+          victorySound.play();
+          ambienceOffice.play();
+          document
+            .getElementById("restart-game-button")
+            .addEventListener("click", (event) => {
+              window.location.href = "./hello.html";
+            });
+        };
+      </script>
+    </section>
+  </body>
 </html>
