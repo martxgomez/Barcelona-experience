@@ -39,9 +39,11 @@ function gameLoop() {
     if (myGame.currentScreen === 1) {
       if (!myGame.isAmbienceSoundPlaying) {
         myGame.ambienceSound.currentTime = 0;
-        myGame.ambienceSound.play();
-        myGame.isAmbienceSoundPlaying = true;
+        myGame.ambienceSound.play().catch((error) => {
+          console.error("Error al reproducir el sonido de ambiente:", error);
+        });
       }
+      myGame.isAmbienceSoundPlaying = true;
 
       player.receiveDamage();
       if (frames % 100 === 0) {
@@ -72,18 +74,18 @@ function gameLoop() {
       player.positionLeft + player.width >= myGame.width
     ) {
       myGame.changeScreen(2, Pickpocket);
-    }
-
-    else if (myGame.currentScreen === 2) {
+    } else if (myGame.currentScreen === 2) {
       if (myGame.isAmbienceSoundPlaying) {
         myGame.ambienceSound.pause();
         myGame.isAmbienceSoundPlaying = false;
       }
       if (!myGame.isAmbienceSoundMetroPlaying) {
         myGame.ambienceSoundMetro.currentTime = 10;
-        myGame.ambienceSoundMetro.play();
-        myGame.isAmbienceSoundMetroPlaying = true;
+        myGame.ambienceSoundMetro.play().catch((error) => {
+          console.error("Error al reproducir el sonido de metro:", error);
+        });
       }
+      myGame.isAmbienceSoundMetroPlaying = true;
       if (myGame.pickpocket) {
         myGame.pickpocket.move();
         myGame.pickpocket.pick();
@@ -92,9 +94,7 @@ function gameLoop() {
         myGame.changeScreenFinal(3);
         myGame.ambienceSoundMetro.pause();
       }
-    }
-
-    else if (myGame.currentScreen === 3) {
+    } else if (myGame.currentScreen === 3) {
       myGame.ambienceSoundMetro.pause();
       myGame.isAmbienceSoundMetroPlaying = false;
       window.location.href = "./ganar.html";
@@ -102,8 +102,9 @@ function gameLoop() {
         myGame.ambienceOffice.currentTime = 10;
         myGame.ambienceOffice.play();
         myGame.isAmbienceOfficePlaying = true;
+      }
     }
   }
-}}
+}
 
 requestAnimationFrame(gameLoop);
