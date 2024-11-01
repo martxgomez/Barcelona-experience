@@ -60,11 +60,6 @@ class Game {
       this.obstacleBottom.width =
         this.obstacleBottom.element.getBoundingClientRect().width;
 
-      // this.obstacleCenter = new Obstacle("obstacle-center");
-      // this.element.appendChild(this.obstacleCenter.element);
-      // this.obstacleBottom.height = this.obstacleBottom.getBoundingClientRect().height;
-      // this.obstacleBottom.width = this.obstacleBottom.getBoundingClientRect().width;
-
       if (myGame.score >= 300) {
         player.positionLeft = 300;
         player.positionBottom = (this.height - player.height) / 2;
