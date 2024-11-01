@@ -147,10 +147,8 @@ class Player {
       //si pierde todas las vidas pierde
       if (!myGame.lives) {
         myGame.gameOver = true;
-        this.gameOverElement = document.createElement("div");
-        this.gameOverElement.setAttribute("id", "game-over-1");
-        myGame.element.appendChild(this.gameOverElement);
         myGame.ambientSound.pause();
+        window.location.href = "./perder-1.html"
        
       }
     });

@@ -2,7 +2,7 @@
 
 ## Descripción
 
-¿Quieres sentir el día a día viviendo en Barcelona? ¡Ahora lo puedes experimentar!
+
 
 Eres un oficinista que tiene que llegar al trabajo en metro pero ¡CUIDADO!
 El metro en Barcelona esconde muchos peligros.

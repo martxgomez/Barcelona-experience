@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Barcelona's Experience</title>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
-      </style>
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Lexend:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-        </style>
-</head>
-<body>
-    <header>
-        <h1>Barcelona's Experience</h1>
-    </header>
-    
-</body>
+      @import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap");
+    </style>
+  </head>
+  <body>
+    <section id="hello">
+      <div id="doll"></div>
+      <section id="info">
+        <header>
+          <h1>Welcome to Barcelona's Experience</h1>
+          <h2>
+            ¿Quieres sentir el día a día viviendo en Barcelona? ¡Ahora lo puedes
+            experimentar!
+          </h2>
+          <p>
+            Eres una oficinista que tiene que llegar al trabajo en metro pero
+            ¡CUIDADO! El metro en Barcelona esconde muchos peligros. ¿Serás
+            capaz de sortear los peligros y llegar a tu trabajo a tiempo?
+          </p>
+          <p>
+            Tendrás que esquivar a los guiris/turistas sino quieres que te paren
+            para preguntar dónde comer <em>paela.</em> Al mismo tiempo puedes
+            conseguir puntos matando las cucarachas del metro.
+            <strong>¡OJO! </strong> Estos puntos te ayudarán a pelear contra el
+            final boss: El carterista o pickpocket del metro.
+          </p>
+          <h3>
+            ¡Si consigues evitar al carterista llegarás sana y salva al trabajo!
+          </h3>
+        </header>
+        <button id="start-game-button">¡A por ellos!</button>
+        <script>
+          document
+            .getElementById("start-game-button")
+            .addEventListener("click", (event) => {
+              window.location.href = "./index.html";
+            });
+        </script>
+      </section>
+    </section>
+  </body>
 </html>
