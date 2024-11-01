@@ -83,29 +83,29 @@ Segundo escenario: Interior del metro (batalla con el carterista)
     - [X] Pantalla de derrota.
     - [X] Pantalla de victoria.
 
-- [ ] **Estilo y Diseño (CSS)**
+- [X] **Estilo y Diseño (CSS)**
 
   - [x] Crear un archivo CSS para el estilo del juego.
-  - [ ] Establecer el diseño de los elementos.
-  - [ ] Establecer el diseño del andén del metro.
-  - [ ] Establecer el diseño del interior del metro.
-  - [ ] Estilizar la pantalla de victoria y derrota.
+  - [X] Establecer el diseño de los elementos.
+  - [X] Establecer el diseño del andén del metro.
+  - [X] Establecer el diseño del interior del metro.
+  - [X] Estilizar la pantalla de victoria y derrota.
 
 - [ ] **Refactorización**
 
   - [ ] Revisar el código para mejorar la legibilidad y eficiencia.
   - [ ] Eliminar código redundante.
-  - [ ] Documentar funciones y métodos.
+  - [X] Documentar funciones y métodos.
 
-- [ ] **Pruebas y Ajustes**
+- [X] **Pruebas y Ajustes**
 
-  - [ ] Probar la jugabilidad.
-  - [ ] Ajustar la dificultad.
-  - [ ] Ajustar la detección de colisiones.
+  - [X] Probar la jugabilidad.
+  - [X] Ajustar la dificultad.
+  - [X] Ajustar la detección de colisiones.
 
-- [ ] **Documentación**
-  - [ ] Actualizar el `README.md`.
-  - [ ] Documentar el código.
+- [X] **Documentación**
+  - [X] Actualizar el `README.md`.
+  - [X] Documentar el código.
 
 #### Planificación en Días
 
@@ -133,37 +133,42 @@ A continuación, se detalla una posible organización de las clases, métodos y 
 
 - **Descripción**: Controla el flujo del juego y la lógica general.
 - **Atributos**:
-  - `estado`: Estado actual del juego (iniciado, en curso, terminado).
+  - `estado`: Estado actual del juego (iniciado, terminado).
   - `puntuación`: Puntuación acumulada del jugador.
-  - `nivel`: Nivel actual (escenario).
+  - `vidas`: Vida actual (escenario).
 - **Métodos**:
-  - `iniciarJuego()`: Inicializa el juego.
-  - `terminarJuego()`: Finaliza el juego y muestra resultados.
-  - `actualizarEstado()`: Actualiza el estado del juego (cambiar de nivel, mostrar mensajes, etc.).
+  - `updateLives()`: Actualizar vidas
+  - `updateScore()`: Actualiza puntuación
+  - `changeScreen()`: Cambia la pantalla
+  - `changeScreenFinal()`: Cambia a la pantalla final
 
 #### 2. **Lógica (Logic)**
 
 - **Descripción**: Maneja la lógica del juego, incluidas las colisiones y el avance del juego.
-- **Atributos**:
-  - `jugador`: Referencia al objeto `Jugador`.
-  - `enemigos`: Lista de enemigos en el juego (turistas y carterista).
-  - `cucarachas`: Lista de cucarachas en el juego.
-- **Métodos**:
-  - `verificarColisiones()`: Verifica si el jugador colisiona con enemigos o cucarachas.
-  - `actualizarJuego()`: Actualiza la lógica del juego en cada ciclo (movimiento de enemigos, verificación de colisiones, etc.).
+- Maneja el gameLoop() del juego
 
 #### 3. **Jugador (Jugador)**
 
 - **Descripción**: Representa al jugador y su estado.
 - **Atributos**:
-  - `nombre`: Nombre del jugador.
-  - `vida`: Vida restante del jugador.
-  - `puntuación`: Puntuación acumulada del jugador.
-  - `posX`, `posY`: Posición del jugador en la pantalla.
+ - `element`: Elemento HTML div que representa el jugador en el DOM.
+- `width`: Ancho del elemento element, obtenido mediante getBoundingClientRect().
+- `height`: Alto del elemento element, obtenido mediante getBoundingClientRect().
+ - `positionBottom`: Posición del jugador desde la parte inferior del juego, inicialmente calculada a partir de la altura de myGame.
+- `positionLeft`: Posición del jugador desde la parte izquierda del juego, inicializada a 0.
+- `velocity`: Velocidad de movimiento del jugador, inicializada en 4.5.
+- `direction`: Dirección de movimiento actual del jugador, inicializada en null.
+- `crunchSound`: Sonido de "Crunch" al atacar una cucaracha.
+- `excuseMeSound`: Sonido de "Excuse me" al recibir daño de un turista.
+- `sagradaFamilia`: Sonido de "Sagrada Familia" al recibir daño.
+- `sangria`: Sonido de "Sangría" al recibir daño.
+- `counter`: Contador de sonido para alternar entre los sonidos al recibir daño, inicializado en 0.
 - **Métodos**:
-  - `mover(dirección)`: Mueve al jugador en la dirección especificada (izquierda, derecha, adelante).
-  - `atacar()`: Matar las cucarachas
-  - `recibirDaño()`: Reduce la vida del jugador.
+  - `move(direction)`: Mueve al jugador en la dirección especificada (izquierda, derecha, adelante).
+  - `attack()`: Matar las cucarachas y aumenta la puntuación
+  - `receiveDamage()`: Detecta las colisiones con los turistas y resta vida.
+  - `block(direction)`: Evita que el jugador atraviese ciertos obstáculos en el juego.
+  - `appearScoreAdElement(left, bottom)`: Crea un elemento visual temporal que muestra la puntuación obtenida al pisar una cucaracha.
 
 #### 4. **Enemigos (Enemies)**
 
