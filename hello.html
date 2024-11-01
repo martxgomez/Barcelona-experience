@@ -38,20 +38,19 @@
         </header>
         <button id="start-game-button">¡A por ellos!</button>
         <script>
-          document
-            .getElementById("start-game-button")
-            .addEventListener("click", (event) => {
-              window.location.href = "./index.html";
-            });
+          window.onload = () => {
+            const introSound = new Audio("./sounds/Intro.mp3");
+            introSound.currentTime = 0;
+            introSound.play();
+
+            document
+              .getElementById("start-game-button")
+              .addEventListener("click", (event) => {
+                window.location.href = "./index.html";
+              });
+          };
         </script>
       </section>
     </section>
-    <script src="./game.js"></script>
-    <script src="./obstacle.js"></script>
-    <script src="./cockroach.js"></script>
-    <script src="./tourist.js"></script>
-    <script src="./player.js"></script>
-    <script src="./pickpocket.js"></script>
-    <script src="./logic.js"></script>
   </body>
 </html>
