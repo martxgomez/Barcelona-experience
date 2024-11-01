@@ -225,7 +225,7 @@ margin:-20px auto 30px auto
 #game-over-1 {
   width: 100dvw;
   height: 100dvh;
-  background-image: url(./images/Pantallas.png);
+  background-image: url(./images/Pantalla-perder1.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -238,7 +238,7 @@ margin:-20px auto 30px auto
 #game-over-2 {
   width: 100dvw;
   height: 100dvh;
-  background-image: url(./images/Pantallas.png);
+  background-image: url(./images/Pantalla-perder2.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
