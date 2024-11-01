@@ -39,11 +39,9 @@ function gameLoop() {
     if (myGame.currentScreen === 1) {
       if (!myGame.isAmbienceSoundPlaying) {
         myGame.ambienceSound.currentTime = 0;
-        myGame.ambienceSound.play().catch((error) => {
-          console.error("Error al reproducir el sonido de ambiente:", error);
-        });
+        myGame.ambienceSound.play();
+        myGame.isAmbienceSoundPlaying = true;
       }
-      myGame.isAmbienceSoundPlaying = true;
 
       player.receiveDamage();
       if (frames % 100 === 0) {
@@ -81,11 +79,9 @@ function gameLoop() {
       }
       if (!myGame.isAmbienceSoundMetroPlaying) {
         myGame.ambienceSoundMetro.currentTime = 10;
-        myGame.ambienceSoundMetro.play().catch((error) => {
-          console.error("Error al reproducir el sonido de metro:", error);
-        });
+        myGame.ambienceSoundMetro.play();
+        myGame.isAmbienceSoundMetroPlaying = true;
       }
-      myGame.isAmbienceSoundMetroPlaying = true;
       if (myGame.pickpocket) {
         myGame.pickpocket.move();
         myGame.pickpocket.pick();

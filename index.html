@@ -39,16 +39,11 @@
         <button id="start-game-button">¡A por ellos!</button>
         <script>
           window.onload = () => {
-            const introSound = new Audio("./sounds/Intro.mp3");
-            let hasPlayed = false;
-            document.addEventListener("mousemove", () => {
-              if (!hasPlayed) {
-                hasPlayed = true;
-                introSound.play().catch((error) => {
-                  console.error("Error al reproducir el audio:", error);
-                });
-              }
-            });
+            setTimeout(() => {
+              const introSound = new Audio("./sounds/Intro.mp3");
+              introSound.currentTime = 0;
+              introSound.play();
+            },2000);
 
             document
               .getElementById("start-game-button")
