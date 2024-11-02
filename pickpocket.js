@@ -11,6 +11,8 @@ class Pickpocket {
     this.positionLeft = 0;
     this.velocity = 4;
   }
+
+
   move() {
     this.positionLeft += this.velocity;
     this.element.style.left = this.positionLeft + "px";
@@ -20,6 +22,8 @@ class Pickpocket {
       this.element.remove();
     }
   }
+
+
  //definimos el método para robar
   pick() {
     //marcamos los limites del player
@@ -34,6 +38,8 @@ class Pickpocket {
     const pickpocketBottom = this.positionBottom;
     const pickpocketTop = this.positionBottom + this.height;
 
+
+    //si colisionan, player pierde
     if (
       playerRight > pickpocketLeft &&
       playerLeft < pickpocketRight &&

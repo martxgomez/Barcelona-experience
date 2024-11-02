@@ -1,5 +1,4 @@
 class Obstacle {
-  //Creamos un array donde vayan apareciendo las cucarachas
 
   constructor(id) {
     //Definimos en pantalla y su posición aleatoria

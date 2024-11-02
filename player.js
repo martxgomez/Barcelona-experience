@@ -85,6 +85,7 @@ class Player {
       const cockroachBottom = cockroach.positionBottom;
       const cockroachTop = cockroach.positionBottom + cockroach.height;
 
+      //si colisionan, player gana puntuacion, salta la animación y sonido
       if (
         playerRight > cockroachLeft &&
         playerLeft < cockroachRight &&
@@ -116,6 +117,8 @@ class Player {
       const touristBottom = tourist.positionBottom;
       const touristTop = tourist.positionBottom + tourist.height;
 
+
+      //si colisionan, el player pierde vidas
       if (
         playerRight > touristLeft &&
         playerLeft < touristRight &&
@@ -127,6 +130,7 @@ class Player {
         myGame.updateLives();
         tourist.hasDamagedPlayer = true;
 
+        //contador de turistas para que suene un audio diferente siempre
         if (this.counter === 0) {
           this.sagradaFamilia.currentTime = 0;
           this.sagradaFamilia.play();
@@ -139,11 +143,13 @@ class Player {
         }
         this.counter = (this.counter + 1) % 3;
 
+        //animacion para cuando colisionan
         myGame.element.classList.add("shake");
         setTimeout(() => {
           myGame.element.classList.remove("shake");
         }, 300);
       }
+
       //si pierde todas las vidas pierde
       if (!myGame.lives) {
         myGame.gameOver = true;
@@ -160,7 +166,7 @@ class Player {
   //definimos el metodo para que el player no pueda pasar por encima de los obstaculos
   //no se si añadir un obstaculo central
   block(direction) {
-    //definimos límites de obstaculos
+    //definimos límites de los obstaculos
 
     switch (direction) {
       case "bottom":
@@ -188,6 +194,8 @@ class Player {
     this.element.style.bottom = this.positionBottom + "px";
   }
 }
+
+//funcion para que aparezca la animación de la cucaracha
 function appearScoreAdElement(left, bottom) {
   const scoreAdElement = document.createElement("div");
   scoreAdElement.classList.add("score-ad");
@@ -199,4 +207,6 @@ function appearScoreAdElement(left, bottom) {
     scoreAdElement.remove();
   }, 300);
 }
+
+
 const player = new Player();
