@@ -38,9 +38,7 @@ Primer escenario: Andén del metro (esquivar turistas)
 
 <img src="./images/Primera%20pantalla.png" alt="Primera pantalla" width="700" >
 
-- Objetivo no conseguido: pierdes y aparece la siguiente pantalla:
-
-<img src="./images/Pantalla%20perder-1.png" alt="Perder en el primer escenario" width="500" >
+- Objetivo no conseguido: pierdes y aparece la siguiente pantalla.
 
 Segundo escenario: Interior del metro (batalla con el carterista)
 
@@ -49,13 +47,9 @@ Segundo escenario: Interior del metro (batalla con el carterista)
 
 <img src="./images/Segunda%20pantalla.png" alt="Segunda pantalla" width="700" >
 
-- Objetivo no conseguido: pierdes y aparece la siguiente pantalla:
+- Objetivo no conseguido: pierdes y aparece la siguiente pantalla.
 
-<img src="./images/Pantalla%20perder-2.png" alt="Perder en el segundo escenario" width="500" >
-
-- Objetivo conseguido:
-
-<img src="./images/Pantalla%20Ganar.png" alt="Has ganado" width="500" >
+- Objetivo conseguido: pantalla de ganar.
 
 ### 3. Lista de tareas
 
@@ -172,20 +166,18 @@ A continuación, se detalla una posible organización de las clases, métodos y 
 
 #### 4. **Enemigos (Enemies)**
 
-- **Descripción**: Clase para los enemigos en el juego.
-- **Atributos**:
-  - `posX`, `posY`: Posición del enemigo en la pantalla.
-  - `tipo`: Tipo de enemigo (turista o carterista).
-- **Métodos**:
-  - `mover()`: Mueve al enemigo en una dirección aleatoria o específica.
-  - `interactuarCon(jugador)`: Define la interacción con el jugador (si se choca, por ejemplo).
-
 ##### **4.1. Turistas (Tourist)**
 
 - **Descripción**: Representa a los turistas que el jugador debe esquivar.
+- **Atributos**: 
+ - `element`: Elemento HTML div que representa a cada uno de los turistas del array en el DOM.
+- `width`: Ancho del elemento element, obtenido mediante getBoundingClientRect().
+- `height`: Alto del elemento element, obtenido mediante getBoundingClientRect().
+ - `positionBottom`: Posición del turista desde la parte inferior del juego, inicialmente calculada a partir de la altura de myGame.
+- `positionLeft`: Posición del turista desde la parte izquierda del juego, inicializada a 0.
+- `velocity`: Velocidad de movimiento del jugador, inicializada en 1.8.
 - **Métodos**:
-  - `interactuarCon(jugador)`: Si el jugador choca con un turista, se ejecuta una lógica específica (por ejemplo, detenerse).
-
+ - `move(direction)`: Mueve al turista de derecha a izquierda.
 ##### **4.2. Carterista (Pickpocket)**
 
 - **Descripción**: Representa al carterista, el jefe final.
@@ -216,3 +208,11 @@ A continuación, se detalla una posible organización de las clases, métodos y 
 - Crear una rama para cada tarea.
 
 ### ¡Hay que hacer al menos 2 commits por día!
+
+6. Backlog
+
+- Refactorizas el cógido: creo que tengo código repetido y debería optimizarlo.
+- Intentar que las voces de los turistas y la imagen se vincule para que tengan el mismo género.
+- En el segundo escenario, incluir obstáculos como personas moviéndose o la barra central de aggaradera para complicar el juego. Lo intenté pero era muy complicado por el momento.
+- Solucionar el tema del audio de la pantalla principal o incluir un aviso para que se pulse espacio y suene.
+- Actualizar low-fi.
