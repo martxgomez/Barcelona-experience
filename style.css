@@ -242,7 +242,6 @@ header {
   text-align: center;
 }
 #win {
-  border: red solid;
   width: 100dvw;
   height: 100dvh;
   background-image: url(./images/pantalla-ganar.png);
